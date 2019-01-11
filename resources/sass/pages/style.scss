@@ -1,0 +1,36 @@
+@import "_var";
+@import "_main";
+
+
+
+@import "parteils/_header";
+@import "parteils/_menu";
+@import "parteils/_footer";
+@import "parteils/_sliders";
+@import "parteils/_promo";
+@import "parteils/_callback";
+@import "parteils/_social";
+@import "parteils/_rating";
+@import "parteils/_paginations";
+@import "parteils/_company";
+@import "parteils/_list-dot";
+@import "parteils/_similar";
+@import "parteils/_modal";
+@import "parteils/_quote";
+@import "parteils/_breadcrumbs";
+
+// main page
+@import "main-page/_about";
+@import "main-page/_advantages";
+@import "main-page/_service";
+@import "main-page/_work";
+@import "main-page/_subs";
+@import "main-page/_interesting";
+@import "main-page/_review";
+
+// pages
+@import "pages/_contacts";
+@import "pages/_article";
+@import "pages/_blog";
+@import "pages/_info";
+@import "pages/_dictionary";

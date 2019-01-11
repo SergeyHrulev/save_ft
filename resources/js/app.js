@@ -6,6 +6,9 @@
  */
 
 require('./bootstrap');
+require('slick-carousel');
+require('./script');
+
 
 window.Vue = require('vue');
 
@@ -22,6 +25,7 @@ Vue.component('users-list-component', require('./components/UsersListComponent.v
 Vue.component('left-side-bar-component', require('./components/LeftSideBarComponent.vue'));
 Vue.component('main-dashboard-component', require('./components/MainDashboardComponent.vue'));
 Vue.component('roles-permissions-component', require('./components/RolesPermissionsComponent.vue'));
+Vue.component('create-article-component', require('./components/CreateArticleComponent.vue'));
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))

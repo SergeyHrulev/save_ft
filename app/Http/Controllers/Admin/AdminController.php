@@ -34,4 +34,9 @@ class AdminController extends Controller
         $role->givePermissionTo($permission);
         $this->getRolesPermissions();
     }
+
+    public function setRole(Request $request){
+        $role = Role::create(['name' => $request->input('role')]);
+        $this->getRolesPermissions();
+    }
 }

@@ -1,0 +1,22 @@
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-minus,
+  &-plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  &-minus {
+    padding-top: 3px;
+  }
+
+  &-number {
+    margin: 0 10px;
+    font-size: 14px;
+  }
+}

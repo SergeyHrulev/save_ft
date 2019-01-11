@@ -1,0 +1,45 @@
+.about {
+  position: relative;
+  background: #F7F7F7;
+  padding: 4rem 0;
+  &:before {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 43%;
+    height: 100%;
+    content: '';
+    background: url(../../img/about-bg.jpg) center center no-repeat/cover;
+  }
+  &-caption {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  &-text {
+    font-size: 1rem;
+  }
+  &-director {
+    padding: 80px 0;
+  }
+}
+@media (min-width: 992px) {
+  .about {
+    padding: 155px 0;
+    &:before {
+      display: block;
+    }
+    &-director {
+      padding-top: 230px;
+      padding-bottom: 280px;
+    }
+    &-caption {
+      font-size: 2rem;
+    }
+    &-text {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}

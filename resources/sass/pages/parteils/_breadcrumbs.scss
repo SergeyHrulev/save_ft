@@ -1,0 +1,43 @@
+.breadcrumbs {
+  padding: 40px 0;
+
+  &-content {
+    display: flex;
+    align-items: center;
+  }
+
+  &-item {
+    position: relative;
+    margin-right: 28px;
+    color: $font-color;
+    font-size: 20px;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: none;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &:after {
+        display: none;
+      }
+
+      &:hover {
+        color: $font-color;
+        cursor: default;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      width: 12px;
+      height: 2px;
+      right: -20px;
+      top: 50%;
+      background: #B2B6BC;
+      content: '';
+    }
+  }
+}

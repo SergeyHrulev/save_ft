@@ -8,13 +8,20 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+// Slick theme
+@import "~slick-carousel/slick/slick-theme";
+@import "~slick-carousel/slick/slick";
+
+//Local styles
+@import "pages/style";
+
 /*
 dashboard section
  */
-@import "general";
-@import "cms/cms";
-@import "cms/cms-menu";
-@import "cms/page-tags";
+// @import "general";
+// @import "cms/cms";
+// @import "cms/cms-menu";
+// @import "cms/page-tags";
 
 .navbar-laravel {
   background-color: #fff;

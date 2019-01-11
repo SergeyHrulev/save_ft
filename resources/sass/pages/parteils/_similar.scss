@@ -1,0 +1,16 @@
+.similar {
+  margin-bottom: 5rem;
+  &-caption {
+    margin-bottom: 1rem;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  &-slider {
+    overflow: hidden;
+  }
+  .blog-item {
+    display: block;
+    width: 285px;
+    margin: 0 10px;
+  }
+}

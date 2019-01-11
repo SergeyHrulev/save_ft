@@ -1,0 +1,23 @@
+.slick-dots {
+  bottom: 20px;
+  li {
+    button {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid $secondary-color;
+      &:before {
+        content: '';
+      }
+    }
+  }
+  li.slick-active {
+    button {
+      background: $secondary-color;
+    }
+  }
+}
+.slick-dotted {
+  padding-bottom: 50px;
+}

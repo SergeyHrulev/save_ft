@@ -1,0 +1,24 @@
+.list-dot {
+  li {
+    position: relative;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    line-height: 26px;
+    font-size: 18px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      position: absolute;
+      top: 7px;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      background: #474771;
+      content: '';
+      border-radius: 50%;
+    }
+  }
+}

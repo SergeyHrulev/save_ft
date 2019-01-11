@@ -1,0 +1,62 @@
+.share {
+  &-text {
+    font-size: 18px;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: #fff;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &--color {
+    .share-item {
+      &--vk {
+        background: #507299;
+      }
+      &--fb {
+        background: #365899;
+      }
+      &--tw {
+        background: #1DA1F2;
+      }
+      &--ok {
+        background: #EE8208;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .share {
+    display: flex;
+    align-items: center;
+
+    &-text {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.promo {
+  .share {
+    margin-top: 4rem;
+  }
+}

@@ -1,0 +1,228 @@
+.dictionary {
+  padding-bottom: 40px;
+
+  &-promo {
+    margin-bottom: 80px;
+
+    .promo-text {
+      text-align: left;
+
+      h4 {
+        display: none;
+      }
+
+      h5 {
+        font-size: 18px;
+      }
+    }
+  }
+
+  &-form {
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+      height: 48px;
+      padding-left: 14px;
+      background: #fff;
+      border-radius: 3px;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      display: none;
+      height: 48px;
+      width: 153px;
+      background: $primary-color;
+      border-radius: 3px;
+
+      &:hover {
+        background: darken($primary-color, 10%);
+      }
+    }
+  }
+
+  &-letters {
+    display: none;
+
+    &__item {
+      padding: 0 8px;
+      color: #fff;
+      font-size: 14px;
+
+      &:hover {
+        color: $primary-color;
+        text-decoration: none;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .breadcrumbs {
+    padding-top: 0;
+    padding-bottom: 20px;
+  }
+
+  &-info {}
+
+  &-caption {
+    margin-bottom: 18px;
+    font-weight: 600;
+    // font-size: 32px;
+    font-size: 24px;
+  }
+
+  &-text {
+    margin-bottom: 20px;
+  }
+
+  &-english {
+    margin-bottom: 80px;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  &-category {
+    &__caption {
+      margin-bottom: 20px;
+      // font-size: 24px;
+      font-size: 18px;
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      margin-right: 20px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background: #F7F7F7;
+      border-radius: 3px;
+      font-size: 14px;
+      color: $font-color;
+
+      &:hover {
+        background: $primary-color;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-sidebar {
+    &__caption {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &-menu {
+    &__item {
+      margin-bottom: 20px;
+      &--active {
+        .dictionary-menu__submenu {
+          display: block;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 18px;
+      font-weight: 500;
+      transition: 0.3s;
+      color: #000;
+      cursor: pointer;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    &__submenu {
+      display: none;
+      padding-top: 10px;
+
+      &-link {
+        position: relative;
+        display: block;
+        font-size: 18px;
+        padding: 8px 20px;
+        color: $font-color;
+        line-height: 1;
+
+        &:hover {
+          color: $primary-color;
+          text-decoration: none;
+        }
+
+        &--active {
+          &:before {
+            position: absolute;
+            top: 13px;
+            left: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #3A4A63;
+            content: '';
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .dictionary {
+    &-promo {
+      .promo-text {
+        h4 {
+          display: block;
+          margin-bottom: 16px;
+        }
+      }
+    }
+
+    &-form {
+      input {
+        flex: 1;
+        width: auto;
+        margin-right: 20px;
+      }
+
+      button {
+        display: block;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .dictionary {
+    &-search {
+      margin-bottom: 32px;
+    }
+
+    &-letters {
+      display: flex;
+    }
+
+    &-category {
+      &__caption {
+        font-size: 24px;
+      }
+
+      &__item {
+        padding: 16px 26px;
+        font-size: 18px;
+      }
+    }
+  }
+}

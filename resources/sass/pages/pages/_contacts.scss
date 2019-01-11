@@ -1,0 +1,73 @@
+.contacts {
+  padding: 4rem 0;
+
+  &-caption {
+    border-bottom: 1px solid #D6D6D6;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 600;
+    }
+  }
+
+  &-info {
+    margin-bottom: 25px;
+
+    &__item {
+      margin-bottom: 2rem;
+
+      &-address {
+        margin-bottom: 0;
+
+        .contacts-info__text {
+          font-size: 18px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    &__title {
+      margin-bottom: 5px;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    &__text {
+      font-size: 24px;
+      font-weight: 500;
+
+      a {
+        color: $font-color;
+        font-size: 24px;
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &-map {
+    height: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .contacts {
+    &-info {
+      display: flex;
+      flex-wrap: wrap;
+
+      &__item {
+        margin-right: 140px;
+
+        &:last-child {
+          flex-basis: 100%;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

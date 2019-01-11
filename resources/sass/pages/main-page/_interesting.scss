@@ -1,0 +1,187 @@
+.interesting {
+  background: #F7F7F7;
+
+  &-article {
+    margin: -40px -10px 2rem;
+
+    &__item {
+      display: block;
+      margin: 40px 10px 0;
+      background: #fff;
+      color: $font-color;
+      border-radius: $border-radius;
+      overflow: hidden;
+
+      &:hover {
+        color: $font-color;
+        text-decoration: none;
+
+        .interesting-article__title {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__info {
+      padding: 1rem 2rem;
+    }
+
+    &__title {
+      line-height: 26px;
+      font-size: 18px;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    &__date {
+      color: #535457;
+    }
+
+    &__pic {
+      height: 185px;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &-event {
+    background: #fff;
+    border-radius: $border-radius;
+
+    &__caption {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #D6D6D6;
+    }
+
+    &__title {
+      font-weight: 500;
+    }
+
+    &__all {
+      font-size: 14px;
+      color: $secondary-color;
+
+      &:hover {
+        color: $secondary-color;
+        text-decoration: underline;
+      }
+    }
+
+    &__content {
+      padding: 15px;
+    }
+
+    &__item {
+      display: flex;
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__pic {
+      width: 80px;
+      margin-right: 20px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__info {
+      flex: 1;
+    }
+
+    &__name {
+      display: block;
+      height: 48px;
+      margin-bottom: 10px;
+      overflow: hidden;
+      color: $font-color;
+      font-weight: 500;
+      line-height: 26px;
+      font-size: 18px;
+
+      &:hover {
+        color: $font-color;
+        text-decoration: underline;
+      }
+    }
+
+    &__date {
+      color: #535457;
+    }
+  }
+}
+@media (min-width: 540px) {
+  .interesting {
+    &-article {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      &__item {
+        width: calc((100% / 2) - 20px);
+      }
+
+      &__title {
+        height: 75px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .interesting {
+    &-event {
+      &__pic {
+        width: 120px;
+        height: 120px;
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px 0;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .interesting {
+    &-article {
+      margin-bottom: 0;
+
+      &__item {
+        max-width: 100%;
+      }
+    }
+
+    &-event {
+      &__caption {
+        font-size: 1.5rem;
+        padding: 30px;
+      }
+
+      &__content {
+        padding: 30px;
+      }
+
+      &__item {
+        margin-bottom: 22px;
+      }
+    }
+  }
+}

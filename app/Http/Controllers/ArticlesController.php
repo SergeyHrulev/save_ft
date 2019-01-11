@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('role:user');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('role:user');
+//    }
 
     /**
      * Display a listing of the resource.
@@ -40,7 +40,9 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->middleware('role:user');
+        $data = $request->all();
+        dd($data);
     }
 
     /**

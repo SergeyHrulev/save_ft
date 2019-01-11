@@ -1,0 +1,57 @@
+.review {
+  &-slider {
+    overflow: hidden;
+  }
+
+  &-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    &__pic {
+      width: 64px;
+      height: 64px;
+      margin-right: 12px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    &__name {
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    &__company {
+      font-size: 14px;
+      color: $font-color-secondary;
+    }
+  }
+
+  &-text {
+    padding: 30px;
+    line-height: 26px;
+    font-size: 18px;
+    border: 1px solid #D6D6D6;
+    border-radius: 0 48px 48px 48px;
+  }
+}
+@media (min-width: 768px) {
+  .review {
+    &-slider {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -40px -10px 0;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      margin: 40px 10px 0;
+      width: calc((100% / 2) - 20px);
+    }
+
+    &-text {
+      height: 100%;
+    }
+  }
+}
