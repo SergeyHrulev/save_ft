@@ -1,5 +1,5 @@
-//= html/header.html
-
+@extends('layouts.app')
+@section('content')
 <div class="contacts">
   <div class="container">
 
@@ -34,5 +34,4 @@
   <!-- /container -->
 </div>
 <!-- /contacts -->
-
-//= html/footer.html
+@stop

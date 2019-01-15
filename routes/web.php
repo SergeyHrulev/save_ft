@@ -13,7 +13,11 @@
 
 Route::get('/', 'PagesController@index')->name('index');
 Route::get('/articles', 'PagesController@articles')->name('articles');
-Route::get('/articles/{slug}', 'PagesController@article')->name('article/{slug}');
+Route::get('/articles/{slug}', 'PagesController@article')->name('article');
+Route::get('/glossary', 'PagesController@glossary')->name('glossary');
+Route::get('/events', 'PagesController@events')->name('events');
+Route::get('/event/{slug}', 'PagesController@event')->name('event');
+Route::get('/contacts', 'PagesController@contacts')->name('contacts');
 
 
 Route::get('/loan-expert', 'PagesController@loanExpert')->name('loan-expert');

@@ -27,24 +27,19 @@
   <!-- /container -->
 </div>
 <!-- /promo -->
-
-{{ Breadcrumbs::render('articles') }}
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="breadcrumbs-content">
+            <a class="breadcrumbs-item" href="/">Финтекс</a>
+            <a class="breadcrumbs-item" href="#">Мероприятия</a>
+        </div>
+    </div>
+</div>
 
 <div class="blog">
   <div class="container">
 
     <div class="blog-content">
-        @foreach($articles as $article)
-            <a class="blog-item" href="{{ url('articles/' . $article->slug) }}">
-                <div class="blog-item__pic">
-                    <img src="{{ asset($article->preview) }}" alt="{{ $article->alt }}">
-                </div>
-                <div class="blog-item__info">
-                    <div class="blog-item__title">{{ $article->anons }}</div>
-                    <div class="blog-item__date">{{ $article->updated_at->formatLocalized('%Y %B %d') }}</div>
-                </div>
-            </a>
-            @endforeach
 
       <a class="blog-item" href="#">
         <div class="blog-item__pic">

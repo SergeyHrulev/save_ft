@@ -21,8 +21,13 @@ class CreateEventsTable extends Migration
             $table->string('title');
             $table->text('subtitle');
             $table->longText('text');
+            $table->string('img')->nullable();
+            $table->string('preview')->nullable();
+            $table->string('alt')->nullable();
+            $table->string('img_title')->nullable();
             $table->integer('published');
             $table->dateTime('event_date');
+            $table->string('event_place');
             $table->softDeletes();
             $table->timestamps();
         });

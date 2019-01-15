@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Articles;
+use App\Events;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -32,4 +33,21 @@ class PagesController extends Controller
         ]);
     }
 
+    public function glossary(){
+        return view('pages.dictionary');
+    }
+
+    public function events(){
+        return view('pages.events');
+    }
+
+    public function event($slug){
+        $event = Events::sortDesc()->published()->get();
+        dd($event);
+        return view('pages.info');
+    }
+
+    public function contacts(){
+        return view('pages.contacts');
+    }
 }

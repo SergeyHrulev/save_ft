@@ -81,16 +81,24 @@
               </li>
             </ul>
           </li>
-          <li class="menu-item"><a class="menu-link" href="#">Мероприятия</a></li>
+          <li class="menu-item"><a class="menu-link" href="{{ route('events') }}">Мероприятия</a></li>
           <li class="menu-item"><a class="menu-link" href="{{ route('articles') }}">Статьи</a></li>
-          <li class="menu-item"><a class="menu-link" href="/dictionary.html">Финсловарь</a></li>
-          <li class="menu-item"><a class="menu-link" href="/contacts.html">Контакты</a></li>
+          <li class="menu-item"><a class="menu-link" href="{{ route('glossary') }}">Финсловарь</a></li>
+          <li class="menu-item"><a class="menu-link" href="{{ route('contacts') }}">Контакты</a></li>
           <li class="menu-item menu-entry"><a class="menu-link" href="javascript:void(0);"  data-toggle="modal" data-target="#modal-login">Вход</a></li>
         </ul>
       </nav>
-      <div class="entry">
-        <button class="menu-link menu-link--button" data-toggle="modal" data-target="#modal-login">Вход</button>
-      </div>
+        @guest
+          <div class="entry">
+            <button class="menu-link menu-link--button" data-toggle="modal" data-target="#modal-login">Вход</button>
+          </div>
+            @else
+            <div class="entry">
+                <div class="menu-submenu__pic">
+                    <img src="{{ asset('img/icon/employee.svg') }}">
+                </div>
+            </div>
+            @endguest
     </div>
     <div class="header-phone">
       <a class="header-phone__number" href="tel:+79998889988">+7 999 888 99 88</a>

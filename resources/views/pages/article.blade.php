@@ -12,8 +12,8 @@
       <div class="col-12 col-xl-10">
         <div class="promo-text">
           <div class="promo-date">10 ноября 2018</div>
-          <h1>Кризис хорошо или плохо</h1>
-          <h3>Ведем бухгалтерию и кадровый учет, рассчитываем зарплату, сопровождаем ERP-системы для заказчиков, требующих безупречного качества</h3>
+          <h1>{{ $article[0]->title }}о</h1>
+          <h3>{{ $article[0]->anons }}</h3>
           <div class="share">
             <div class="share-text">Поделиться</div>
             <div class="share-content">
@@ -46,20 +46,7 @@
 </div>
 <!-- /promo -->
 
-<div class="breadcrumbs">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-lg-8 offset-lg-2">
-        <div class="breadcrumbs-content">
-          <a class="breadcrumbs-item" href="/">Финтекс</a>
-          <a class="breadcrumbs-item" href="#">Блог</a>
-          <a class="breadcrumbs-item" href="#">Запись в блоге</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
+{{ Breadcrumbs::render('article', $article) }}
 
 <div class="container">
 

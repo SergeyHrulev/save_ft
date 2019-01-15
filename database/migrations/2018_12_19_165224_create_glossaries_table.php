@@ -18,9 +18,14 @@ class CreateGlossariesTable extends Migration
             $table->integer('chapter_id')->unsigned();
             $table->string('meta_title')->nullable();
             $table->string('meta_description')->nullable();
+            $table->char('letter', 2)->index();
             $table->string('slug');
             $table->string('title');
             $table->longText('text');
+            $table->string('img')->nullable();
+            $table->string('preview')->nullable();
+            $table->string('alt')->nullable();
+            $table->string('img_title')->nullable();
             $table->integer('published');
             $table->string('english_synonims')->nullable();
             $table->softDeletes();

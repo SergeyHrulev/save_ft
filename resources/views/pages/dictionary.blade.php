@@ -1,5 +1,5 @@
-//= html/header.html
-
+@extends('layouts.app')
+@section('content')
 <div class="dictionary">
 
 
@@ -205,6 +205,4 @@
 
 </div>
 <!-- /dictionary -->
-
-
-//= html/footer.html
+@stop
