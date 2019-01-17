@@ -5,9 +5,10 @@
                 <span aria-hidden="true" style="color: #fff;">&times;</span>
             </button>
         </div>
-        <div class="cms-menu__item cms-menu__item--active">Пользователи</div>
-        <div class="cms-menu__item">Роли и права пользователей</div>
-        <div class="cms-menu__item">Булиты (фильтры)</div>
+        <div class="cms-menu__item cms-menu__item--active">Меню</div>
+        <div class="cms-menu__item"><a href="{{ url('/admin-dashboard/users') }}">Пользователи</a></div>
+        <div class="cms-menu__item"><a href="{{ url('/admin-dashboard/roles') }}">Роли и права пользователей</a></div>
+        <div class="cms-menu__item"><a href="{{ url('/admin-dashboard/articles') }}">Статьи</a></div>
     </div>
     <div class="cms-exit">
         <button>Выйти</button>

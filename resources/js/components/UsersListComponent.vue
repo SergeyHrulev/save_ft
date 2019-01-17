@@ -14,9 +14,8 @@
             <tr v-for="user in users">
                 <th scope="row">{{ user.id }}</th>
                 <td>{{ user.name }}</td>
-                <td v-if="user.roles !== 0" v-for="role in user.roles">{{ role.name }}</td>
-                <td v-else>' '</td>
-                <td>{{ user.email_verified_at }}</td>
+                <td>{{ user.roles[0].name }}</td>
+                <td>{{ user.created_at }}</td>
                 <td>
                     <button type="button" class="btn btn-primary">Редактировать</button>
                     <button type="button" class="btn btn-warning">Удалить</button>

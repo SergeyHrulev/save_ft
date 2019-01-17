@@ -18,6 +18,18 @@ class AdminController extends Controller
         return view('dashboard.main');
     }
 
+    public function users(){
+        return view('dashboard.pages.users');
+    }
+
+    public function roles(){
+        return view('dashboard.pages.roles');
+    }
+
+    public function articles(){
+        return view('dashboard.pages.articles');
+    }
+
     public function getUsersWithRoles(){
         $users = User::with('roles')->get();
         return $users;

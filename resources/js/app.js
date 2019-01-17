@@ -19,13 +19,10 @@ window.Vue = require('vue');
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
-
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('users-list-component', require('./components/UsersListComponent.vue'));
-Vue.component('left-side-bar-component', require('./components/LeftSideBarComponent.vue'));
-Vue.component('main-dashboard-component', require('./components/MainDashboardComponent.vue'));
-Vue.component('roles-permissions-component', require('./components/RolesPermissionsComponent.vue'));
-Vue.component('create-article-component', require('./components/CreateArticleComponent.vue'));
+import ExampleComponent from './components/ExampleComponent.vue';
+import UsersListComponent from './components/UsersListComponent.vue';
+import RolesPermissionsComponent from './components/RolesPermissionsComponent.vue';
+import CreateArticleComponent from './components/CreateArticleComponent.vue';
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -37,5 +34,14 @@ Vue.component('create-article-component', require('./components/CreateArticleCom
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    components: {
+        ExampleComponent,
+        UsersListComponent,
+        RolesPermissionsComponent,
+        CreateArticleComponent,
+    },
+    data:{
+        user: 'name',
+    }
 });

@@ -29,9 +29,18 @@
             </div>
         </div>
         <div class="col-12">
+            <div class="row">
+                <div class="col-12 col-lg-8 offset-lg-2">
+                    <article class="article" v-bind="text">
+                        {{ text }}
+                    </article>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
             <div class="form-group">
                 <label for="">Текст статьи</label>
-                <editor></editor>
+                <textarea class="form-control" name="text" v-model="text" id="" cols="30" rows="10"></textarea>
                 <small class="form-text"></small>
             </div>
         </div>
@@ -61,6 +70,7 @@
                 subtitle: '',
                 text: '',
                 published: false,
+                edited_text: '',
             }
         },
         methods:{
@@ -75,11 +85,67 @@
                 }).then(response => {
                     console.log(response.data);
                 })
+            },
+            setParagraph(){
+
+            },
+            setImage(){
+
+            },
+            setBlockqoute(){
+
             }
         }
     }
 </script>
 
 <style scoped>
+    .article {
+        padding-bottom: 60px;
+    }
 
+    .article-social {
+        padding-bottom: 1.5rem;
+        margin-bottom: 4rem;
+        border-bottom: 1px solid #D6D6D6;
+    }
+
+    .article-social .rating {
+        margin-top: 50px;
+    }
+
+    .article p {
+        margin-bottom: 40px;
+    }
+
+    .article p:first-child {
+        font-weight: 500;
+    }
+
+    .article p:last-child {
+        margin-bottom: 0;
+    }
+
+    .article img {
+        margin-bottom: 40px;
+    }
+
+    .article h1,
+    .article h2,
+    .article h3,
+    .article h4,
+    .article h5,
+    .article h6 {
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+
+    .article-social {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .article-social .rating {
+        margin-top: 0;
+    }
 </style>

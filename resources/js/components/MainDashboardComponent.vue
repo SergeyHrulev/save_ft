@@ -6,9 +6,9 @@
             <!-- /cms-sidebar -->
 
             <div class="cms-content">
-                <!--<users-list-component v-if="tabs.users"></users-list-component>-->
-                <!--<roles-permissions-component v-if="tabs.roles"></roles-permissions-component>-->
-                <!--<create-article-component v-if="tabs.articles"></create-article-component>-->
+                <users-list-component v-if="tabs.users"></users-list-component>
+                <roles-permissions-component v-if="tabs.roles"></roles-permissions-component>
+                <create-article-component v-if="tabs.articles"></create-article-component>
                 <!-- /cms-content__item -->
             </div>
             <!-- /cms-content -->

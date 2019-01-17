@@ -69,6 +69,7 @@
                 axios.post('/admin-dashboard/set-role', {
                     role: this.role
                 }).then(response => {
+                    console.log(response.data);
                     this.roles = response.data;
                     this.role = '';
                 });

@@ -1,4 +1,6 @@
-@extends('layouts.app')
+@extends('dashboard.layouts.app')
 @section('content')
-    <main-dashboard-component></main-dashboard-component>
+        <div class="cms-content">
+            @yield('pages')
+        </div>
     @endsection

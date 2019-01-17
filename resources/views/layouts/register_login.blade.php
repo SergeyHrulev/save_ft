@@ -9,6 +9,7 @@
                 <div class="modal-caption">Вход в личный кабинет</div>
                 <form class="modal-form" action="{{ route('login') }}" method="post">
                     @csrf
+                    @honeypot
                     <div class="modal-form__content">
                         <div class="modal-form__block">
                             <div class="modal-form__title">Email</div>
@@ -55,6 +56,7 @@
                 <div class="modal-caption">Регистрация</div>
                 <form class="modal-form" action="{{ route('register') }}" method="post">
                     @csrf
+                    @honeypot
                     <div class="modal-form__content">
                         <div class="modal-form__block">
                             <div class="modal-form__title">Имя</div>
@@ -124,6 +126,7 @@
                 <div class="modal-caption">Восстановление пароля</div>
                 <form class="modal-form" action="{{ route('password.email') }}" method="post">
                     @csrf
+                    @honeypot
                     <div class="modal-form__content">
                         <div class="modal-form__block">
                             <div class="modal-form__title">Email</div>
