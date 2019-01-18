@@ -1825,6 +1825,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CreateArticleComponent",
@@ -1835,26 +1874,63 @@ __webpack_require__.r(__webpack_exports__);
       title: '',
       subtitle: '',
       text: '',
-      published: false,
-      edited_text: ''
+      published: 0,
+      edited_text: '',
+      file: '',
+      articlePhoto: {
+        photo: '',
+        alt: '',
+        title: ''
+      }
     };
   },
   methods: {
     saveArticle: function saveArticle() {
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/articles', {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/admin-dashboard/articles', {
         meta_title: this.meta_title,
         meta_description: this.meta_description,
         title: this.title,
         subtitle: this.subtitle,
-        text: this.text,
+        text: this.edited_text,
         published: this.published
       }).then(function (response) {
         console.log(response.data);
       });
     },
-    setParagraph: function setParagraph() {},
-    setImage: function setImage() {},
-    setBlockqoute: function setBlockqoute() {}
+    setParagraph: function setParagraph() {
+      var edit = this.text;
+      this.edited_text += '<p>' + edit + '</p>';
+      this.text = '';
+    },
+    setImage: function setImage() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/admin-dashboard/articles/savemodel', {
+        photo: this.articlePhoto.photo,
+        alt: this.articlePhoto.alt,
+        title: this.articlePhoto.title
+      }).then(function (response) {
+        console.log(response.data);
+        _this.edited_text += '<img src="' + response.data.photo + '" alt="' + response.data.alt + '">';
+      });
+    },
+    setBlockqoute: function setBlockqoute() {},
+    onSelectedFile: function onSelectedFile() {
+      var _this2 = this;
+
+      var formData = new FormData();
+      this.file = this.$refs.file.files[0];
+      formData.append('photo', this.file);
+      console.log(formData);
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/admin-dashboard/articles/savephoto', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(function (response) {
+        console.log(response.data);
+        _this2.articlePhoto.photo = response.data;
+      });
+    }
   }
 });
 
@@ -40789,11 +40865,16 @@ var render = function() {
         _c("div", { staticClass: "col-12 col-lg-8 offset-lg-2" }, [
           _c(
             "article",
-            _vm._b({ staticClass: "article" }, "article", _vm.text, false),
+            _vm._b(
+              { staticClass: "article" },
+              "article",
+              _vm.edited_text,
+              false
+            ),
             [
               _vm._v(
                 "\n                    " +
-                  _vm._s(_vm.text) +
+                  _vm._s(_vm.edited_text) +
                   "\n                "
               )
             ]
@@ -40805,6 +40886,35 @@ var render = function() {
     _c("div", { staticClass: "col-12" }, [
       _c("div", { staticClass: "form-group" }, [
         _c("label", { attrs: { for: "" } }, [_vm._v("Текст статьи")]),
+        _vm._v(" "),
+        _c("div", [
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-clear btn-lg",
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.setParagraph($event)
+                }
+              }
+            },
+            [_vm._v("Параграф")]
+          ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn btn-primary",
+              attrs: {
+                type: "button",
+                "data-toggle": "modal",
+                "data-target": "#exampleModal"
+              }
+            },
+            [_vm._v("\n                    Вставить фото\n                ")]
+          )
+        ]),
         _vm._v(" "),
         _c("textarea", {
           directives: [
@@ -40889,10 +40999,149 @@ var render = function() {
           [_vm._v("Сохранить")]
         )
       ])
-    ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "exampleModal",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "exampleModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog", attrs: { role: "document" } },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", { attrs: { for: "" } }, [
+                    _vm._v("Выберите фото")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    ref: "file",
+                    staticClass: "btn btn-info btn-sm",
+                    attrs: { type: "file", name: "file" },
+                    on: { change: _vm.onSelectedFile }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", { attrs: { for: "" } }, [_vm._v("Альт фото")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.articlePhoto.alt,
+                        expression: "articlePhoto.alt"
+                      }
+                    ],
+                    attrs: { type: "text", name: "alt" },
+                    domProps: { value: _vm.articlePhoto.alt },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.articlePhoto, "alt", $event.target.value)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", { attrs: { for: "" } }, [
+                    _vm._v("Заголовок фото")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.articlePhoto.title,
+                        expression: "articlePhoto.title"
+                      }
+                    ],
+                    attrs: { type: "text", name: "title" },
+                    domProps: { value: _vm.articlePhoto.title },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.articlePhoto, "title", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-secondary btn-sm",
+                    attrs: { type: "button", "data-dismiss": "modal" }
+                  },
+                  [_vm._v("Закрыть")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-primary btn-sm",
+                    attrs: { type: "button" },
+                    on: { click: _vm.setImage }
+                  },
+                  [_vm._v("Сохранить")]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
+        [_vm._v("Выбор фото")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -52502,6 +52751,7 @@ var app = new Vue({
     user: 'name'
   }
 });
+$('#myModal').modal('show');
 
 /***/ }),
 

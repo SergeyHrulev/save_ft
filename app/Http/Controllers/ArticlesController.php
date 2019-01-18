@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Articles;
 use Illuminate\Http\Request;
+use Alexusmai\Ruslug\Slug;
 
 class ArticlesController extends Controller
 {
@@ -38,11 +39,13 @@ class ArticlesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Slug $slug)
     {
         $this->middleware('role:user');
-        $data = $request->all();
-        dd($data);
+        $article = Articles::create($request->all());
+        $article->slug = $slug->make($request->title);
+        $article->save();
+        return $article;
     }
 
     /**

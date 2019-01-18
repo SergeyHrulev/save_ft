@@ -45,3 +45,5 @@ const app = new Vue({
         user: 'name',
     }
 });
+$('#myModal').modal('show');
+

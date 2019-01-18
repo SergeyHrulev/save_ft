@@ -53,6 +53,7 @@
   <div class="row">
     <div class="col-12 col-lg-8 offset-lg-2">
       <article class="article">
+          {!! $article[0]->text !!}
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam itaque, tenetur modi! Nisi necessitatibus laboriosam repudiandae reiciendis cumque quia incidunt soluta doloremque ipsa quidem, odit sit culpa, maiores blanditiis dolor!</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem vel perferendis tenetur esse excepturi reiciendis corporis hic maiores quisquam facilis eius debitis repellat aut minus qui molestias, perspiciatis totam inventore voluptatum nisi laborum deleniti. Commodi quas quasi culpa laboriosam quo.</p>
         <img src="{{ asset('img/temp/blog-1.jpg') }}" alt="">

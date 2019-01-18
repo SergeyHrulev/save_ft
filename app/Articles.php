@@ -32,4 +32,8 @@ class Articles extends Model
     public function scopeSortDesc($query){
         return $query->orderBy('updated_at', 'desc');
     }
+
+    public function photo(){
+        return $this->hasMany(ArticlePhoto::class);
+    }
 }
