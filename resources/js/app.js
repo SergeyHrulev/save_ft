@@ -23,6 +23,7 @@ import ExampleComponent from './components/ExampleComponent.vue';
 import UsersListComponent from './components/UsersListComponent.vue';
 import RolesPermissionsComponent from './components/RolesPermissionsComponent.vue';
 import CreateArticleComponent from './components/CreateArticleComponent.vue';
+import ArticleListComponent from './components/ArticleListComponent.vue';
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -40,6 +41,7 @@ const app = new Vue({
         UsersListComponent,
         RolesPermissionsComponent,
         CreateArticleComponent,
+        ArticleListComponent
     },
     data:{
         user: 'name',

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Articles;
 use Illuminate\Http\Request;
 use Alexusmai\Ruslug\Slug;
+use function PHPSTORM_META\elementType;
 
 class ArticlesController extends Controller
 {
@@ -20,7 +21,8 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Articles::all();
+        return $articles;
     }
 
     /**
@@ -30,7 +32,10 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        //
+        $article = new Articles;
+        $article->published = 0;
+        $article->save();
+        return view('dashboard.pages.article_edit', ['article' => $article->id]);
     }
 
     /**
@@ -42,10 +47,16 @@ class ArticlesController extends Controller
     public function store(Request $request, Slug $slug)
     {
         $this->middleware('role:user');
-        $article = Articles::create($request->all());
+        $article = Articles::findOrFail($request->id);
+        $article->meta_title = $request->meta_title;
+        $article->meta_description = $request->meta_description;
+        $article->title = $request->title;
+        $article->subtitle = $request->subtitle;
+        $article->text = $request->text;
+        $article->published = $request->published;
         $article->slug = $slug->make($request->title);
         $article->save();
-        return $article;
+        return redirect('/admin-dashboard/articles');
     }
 
     /**
@@ -65,9 +76,10 @@ class ArticlesController extends Controller
      * @param  \App\Articles  $articles
      * @return \Illuminate\Http\Response
      */
-    public function edit(Articles $articles)
+    public function edit($id)
     {
-        //
+        $article = Articles::findOrFail($id);
+        return view('dashboard.pages.article_edit', ['article' => $article]);
     }
 
     /**
@@ -88,8 +100,13 @@ class ArticlesController extends Controller
      * @param  \App\Articles  $articles
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Articles $articles)
+    public function destroy(Articles $articles, Request $request)
     {
-        //
+
+        if (Articles::destroy($request->id)){
+            return 'Статья успешно удалена';
+        }else{
+            return 'произошла ошибка';
+        }
     }
 }

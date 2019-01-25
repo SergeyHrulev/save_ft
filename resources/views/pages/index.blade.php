@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-12 col-md-6">
         <div class="promo-text">
-          <h1>Аутсорсинг бизнес-процессов на международном уровне</h1>
+          <h1>Аутсорсинг финансовой службы </h1>
           <h3>Ведем бухгалтерию и кадровый учет, рассчитываем зарплату, сопровождаем ERP-системы для заказчиков, требующих безупречного качества</h3>
         </div>
       </div>
@@ -71,11 +71,9 @@
 
           <div class="about-caption">О нас</div>
           <div class="about-text">
-            Не каждая компания может позволить себе нанять в штат опытного Финансового директора, это достаточно дорого и не доступно малому бизнесу. К тому же не каждый Финансовый директор согласится на Ваше предложение, потому что это достаточно
-            статусная позиция выращиваемая годами, а так же Финансовому директору у Вас может стать скучно, потому что он справится с Вашим объемом задач за несколько часов, а все остальное время будет вынужден придумывать себе задачи. Передоверять
-            задачи Главному бухгалтеру – это плохая идея, почему смотрите здесь.
+              Компания «ФинТех» — это команда опытных финансистов, бухгалтеров, налоговых специалистов и финансовых контроллеров. У нас есть практические навыки, приобретенные во время работы в профильных отраслях, обширная информационная база и стремление добиваться поставленных целей. Это помогает нам качественно и эффективно выполнять задачи любого уровня сложности и приводить бизнес заказчиков к впечатляющим результатам.
+              <br>Мы специализируемся на финансовом аутсорсинге и готовы взять на себя ведение управленческого, финансового и налогового учета, расчитать ключевые финансовые показатели ведения бизнеса и проконтролировать их выполнение.
           </div>
-
         </div>
         <!-- /about-content -->
       </div>
@@ -108,8 +106,8 @@
               <img src="{{ asset('img/icon/advantages-1.svg') }}" alt="">
             </div>
             <div class="advantages-info">
-              <div class="advantages-title">Преимущества</div>
-              <div class="advantages-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, aliquid?</div>
+              <div class="advantages-title">Удобство</div>
+              <div class="advantages-text">Обращаясь к нам вы получаете быстрое решение по вопросам: открытия и ведения счетов, бухучету, налоговому планированию и многих других</div>
             </div>
           </div>
         </div>
@@ -120,8 +118,8 @@
               <img src="{{ asset('img/icon/advantages-2.svg') }}" alt="">
             </div>
             <div class="advantages-info">
-              <div class="advantages-title">Преимущества</div>
-              <div class="advantages-text">Lorem ipsum dolor sit amet.</div>
+              <div class="advantages-title">Доступность</div>
+              <div class="advantages-text">Наши услуги обойдутся вам дешевле найма Финансового директора и Главного бухгалтера в штат</div>
             </div>
           </div>
         </div>
@@ -132,8 +130,8 @@
               <img src="{{ asset('img/icon/advantages-3.svg') }}" alt="">
             </div>
             <div class="advantages-info">
-              <div class="advantages-title">Преимущества</div>
-              <div class="advantages-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, dolore ab nesciunt error iste sit iure facere cum omnis laborum ducimus est!</div>
+              <div class="advantages-title">Профессионализм</div>
+              <div class="advantages-text">Наши специалисты имеют практический опыт работы в разных областях: бухучет, управленческий учет, налоги и др.</div>
             </div>
           </div>
         </div>
@@ -160,7 +158,7 @@
       <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
           <h2 class="page-section__title">Наши услуги</h2>
-          <h3 class="page-section__subtitle">Равным образом начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки новых предложений.</h3>
+          <h3 class="page-section__subtitle">Успех бизнеса зависит от эффективного управления финансами. <br> Главная задача руководителя — построить грамотную систему управления финансами. Наша задача - помочь вам в этом</h3>
         </div>
       </div>
     </div>
@@ -174,10 +172,10 @@
               <div class="service-pic">
                 <img src="{{ asset('img/icon/employee.svg') }}" alt="">
               </div>
-              <div class="service-name">Кредитный эксперт</div>
+              <div class="service-name">Бухгалтерский учет</div>
             </div>
             <div class="service-info">
-              Равным образом начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки новых предложений.
+              Возьмем на себя сбор первичных документов, составление и сдачу отчетности в ФНС, ФСС, ПФ. Поможем выбрать оптимальный налоговый режим. Восстановим учет.
             </div>
           </div>
         </div>
@@ -188,10 +186,10 @@
               <div class="service-pic">
                 <img src="{{ asset('img/icon/finance.svg') }}" alt="">
               </div>
-              <div class="service-name">Финансовый директор</div>
+              <div class="service-name">Управленческий учет</div>
             </div>
             <div class="service-info">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, assumenda.
+              Построим систему бюджетирования, определим ключевые финансовые показатели бизнеса, сформируем карту ключевых показателей, проконтролируем исполнение бюджетов.
             </div>
           </div>
         </div>
@@ -202,10 +200,10 @@
               <div class="service-pic">
                 <img src="{{ asset('img/icon/graduation-hat.svg') }}" alt="">
               </div>
-              <div class="service-name">Школа Финансового Директора</div>
+              <div class="service-name">Налоговое планирование</div>
             </div>
             <div class="service-info">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam tenetur esse numquam quia officiis minima!
+              Сделаем расчет налоговой нагрузки, подберем оптимальный налоговый режим, проверим наличие налоговых рисков.
             </div>
           </div>
         </div>
@@ -216,10 +214,10 @@
               <div class="service-pic">
                 <img src="{{ asset('img/icon/shield.svg') }}" alt="">
               </div>
-              <div class="service-name">Безопасность бизнеса</div>
+              <div class="service-name">Расчет проектов</div>
             </div>
             <div class="service-info">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat dolorum modi, non accusamus, perferendis animi officiis asperiores.
+              Если вы хотите открыть новое направление, бизнес, вложить деньги в проект или привлечь инвесторов в проект, мы сделаем расчет проекта, расчитаем сроки окупаемости, возврата инвестиций, расчитаем все необходимые показатели проекта.
             </div>
           </div>
         </div>
@@ -244,10 +242,10 @@
               <div class="service-pic">
                 <img src="{{ asset('img/icon/handshake.svg') }}" alt="">
               </div>
-              <div class="service-name">Ваш банкир</div>
+              <div class="service-name">Управление счетами и оборотным капиталом</div>
             </div>
             <div class="service-info">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae atque perferendis, debitis, sunt cupiditate libero numquam unde enim a neque. Vitae, officia.
+              Поможем с открытием и ведением счетов в банках, подготовкой и отправкой банковских документов, получением кредитов, паспортами сделок.
             </div>
           </div>
         </div>
@@ -285,15 +283,20 @@
           </div>
           <div class="work-item">
             <div class="work-number"><span>2</span></div>
-            <div class="work-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore deserunt, voluptatum eveniet debitis eos doloremque natus. Quisquam nam, officia voluptas rem quas earum, ex excepturi, velit ut tempore, voluptate
-              illo ea laborum quibusdam qui deserunt?</div>
+            <div class="work-info">Проводим тщательный аудит компании, после чего разрабатываем финансовые показатели и согласовываем эти данные с собственниками компании.</div>
           </div>
           <div class="work-item">
             <div class="work-number"><span>3</span></div>
             <div class="work-info">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae consequatur expedita a quidem iste minima sit aspernatur, ullam aut dolore, ut reiciendis, hic debitis ea.
+                На основе полученной информации составляем бюджет и финансовый план.
             </div>
           </div>
+            <div class="work-item">
+                <div class="work-number"><span>4</span></div>
+                <div class="work-info">
+                    Контролируем выполнение показателей и корректируем бюджет.
+                </div>
+            </div>
 
         </div>
         <!-- /work-content -->
@@ -327,7 +330,7 @@
       <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
           <h2 class="page-section__title">Подпишитесь на нашу рассылку</h2>
-          <h3 class="page-section__subtitle">Равным образом начало повседневной работы по формированию</h3>
+          <h3 class="page-section__subtitle">Чтобы быть в курсе новостей по управлению финансами</h3>
         </div>
       </div>
     </div>
@@ -354,8 +357,8 @@
     <div class="page-section__caption">
       <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
-          <h2 class="page-section__title">Отзывы наших довольных клиентов</h2>
-          <h3 class="page-section__subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing.</h3>
+          <h2 class="page-section__title">Отзывы наших клиентов</h2>
+          <h3 class="page-section__subtitle"></h3>
         </div>
       </div>
     </div>
@@ -443,7 +446,7 @@
       <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
           <h2 class="page-section__title">Интересные статьи и мероприятия</h2>
-          <h3 class="page-section__subtitle">Равным образом начало повседневной работы по формированию</h3>
+          <h3 class="page-section__subtitle"></h3>
         </div>
       </div>
     </div>

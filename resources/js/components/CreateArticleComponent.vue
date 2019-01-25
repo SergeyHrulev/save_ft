@@ -2,6 +2,13 @@
     <div class="cms-content__item">
         <div class="col-12">
             <div class="form-group">
+                <label for="">ID статьи</label>
+                <input type="text" class="form-control" v-bind:value="this.article">
+                <small class="form-text"></small>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
                 <label for="">Мета заголовок</label>
                 <input type="text" class="form-control" v-model="meta_title">
                 <small class="form-text"></small>
@@ -10,6 +17,13 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="">Мета описание</label>
+                <input type="text" class="form-control" v-model="meta_description">
+                <small class="form-text"></small>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                <label for="">Главное фото</label>
                 <input type="text" class="form-control" v-model="meta_description">
                 <small class="form-text"></small>
             </div>
@@ -45,6 +59,7 @@
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         Вставить фото
                     </button>
+                    <button class="btn btn-clear btn-lg" @click.prevent="setBlockqoute">Цитата</button>
                 </div>
                 <textarea class="form-control" name="text" v-model="text" id="" cols="30" rows="10"></textarea>
                 <small class="form-text"></small>
@@ -101,6 +116,7 @@
     import axios from 'axios';
     export default {
         name: "CreateArticleComponent",
+        props: ['article'],
         data(){
             return{
                 meta_title: '',
@@ -122,6 +138,7 @@
         methods:{
             saveArticle(){
                 axios.post('/admin-dashboard/articles', {
+                    id: this.article,
                     meta_title: this.meta_title,
                     meta_description: this.meta_description,
                     title: this.title,
@@ -129,7 +146,7 @@
                     text: this.edited_text,
                     published: this.published,
                 }).then(response => {
-                    console.log(response.data);
+                    window.location.href = window.location.origin + '/admin-dashboard/articles';
                 })
             },
             setParagraph(){
@@ -148,7 +165,14 @@
                 })
             },
             setBlockqoute(){
-
+                let edit = this.text;
+                this.edited_text += '<blockquote class="quote">\n' +
+                    '          <div class="quote-pic">\n' +
+                    '            <img src="{{ asset(\'img/icon/quote.svg\') }}" alt="">\n' +
+                    '          </div>\n' +
+                    '          <p class="quote-text">' + edit + '</p>\n' +
+                    '        </blockquote>';
+                this.text = '';
             },
             onSelectedFile(){
                 let formData = new FormData();

@@ -12446,6 +12446,7 @@ svg path {
   .about-text {
     font-size: 18px;
     line-height: 26px;
+    letter-spacing: 0.0025em;
   }
 }
 
