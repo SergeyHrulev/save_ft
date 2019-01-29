@@ -32,10 +32,11 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        $article = new Articles;
-        $article->published = 0;
-        $article->save();
-        return view('dashboard.pages.article_edit', ['article' => $article->id]);
+        //$article = new Articles;
+        //$article->published = 0;
+        //$article->save();
+        //return view('dashboard.pages.article_edit', ['article' => $article->id]);
+        return view('dashboard.pages.article_edit');
     }
 
     /**

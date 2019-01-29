@@ -24,7 +24,7 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="">Главное фото</label>
-                <input type="text" class="form-control" v-model="meta_description">
+                <input type="file" class="form-control">
                 <small class="form-text"></small>
             </div>
         </div>
@@ -116,7 +116,7 @@
     import axios from 'axios';
     export default {
         name: "CreateArticleComponent",
-        props: ['article'],
+        //props: ['article'],
         data(){
             return{
                 meta_title: '',
