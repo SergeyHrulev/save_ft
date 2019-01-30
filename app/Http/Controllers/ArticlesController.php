@@ -32,10 +32,29 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        $article = new Articles;
-        $article->published = 0;
-        $article->save();
-        return view('dashboard.pages.article_edit', ['article' => $article->id]);
+        //$article = new Articles;
+        //$article->published = 0;
+        //$article->save();
+        //return view('dashboard.pages.article_edit', ['article' => $article->id]);
+        return view('dashboard.pages.article_edit');
+    }
+
+    public function setArticleImg(){
+        $articleImg = Articles::find(3);
+        $img = 'https://www.millionaireacts.com/wp-content/uploads/2018/01/Before-Opening-Business-to-Public-1.jpg';
+
+        //dd($img);
+        $articleImg->addMediaFromUrl($img)->preservingOriginal()->toMediaCollection('article-text-photo');
+        dd($articleImg);
+    }
+
+    public function getArticleImg(){
+        $article = Articles::find(2);
+        $articleImg = $article->getMedia('article-text-photo');
+        $url = $articleImg[0]->getUrl();
+        $fullUrl = $articleImg[0]->getFullUrl();
+        $path = $articleImg[0]->getPath();
+        dd($articleImg, $url, $fullUrl, $path);
     }
 
     /**
