@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0860c47f8a18d8056a2771e6427b4284",
+    "content-hash": "1f1100a86d8bf62502327168733e6b1a",
     "packages": [
         {
             "name": "alexusmai/ruslug",
@@ -1441,6 +1441,70 @@
                 "processing"
             ],
             "time": "2018-12-22T17:56:55+00:00"
+        },
+        {
+            "name": "lionix/seo-manager",
+            "version": "v1.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lionix-team/seo-manager.git",
+                "reference": "6371a08e453c311dcc096f64cfcffc43933455e5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lionix-team/seo-manager/zipball/6371a08e453c311dcc096f64cfcffc43933455e5",
+                "reference": "6371a08e453c311dcc096f64cfcffc43933455e5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.5.* || 5.6.* || 5.7.*",
+                "php": "^7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lionix\\SeoManager\\SeoManagerServiceProvider"
+                    ],
+                    "aliases": {
+                        "SeoManager": "Lionix\\SeoManager\\Facades\\SeoManager"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lionix\\SeoManager\\": "src"
+                },
+                "files": [
+                    "src/helpers/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Karakhanyan",
+                    "email": "karakhanyansa@gmail.com"
+                },
+                {
+                    "name": "Lionix Team",
+                    "email": "packages@lionix-team.com"
+                }
+            ],
+            "description": "SEO Manager for Laravel Framework",
+            "keywords": [
+                "laravel",
+                "lionix",
+                "meta",
+                "meta-data",
+                "og-data",
+                "open-graph",
+                "seo",
+                "seo-manager"
+            ],
+            "time": "2019-01-18T06:40:21+00:00"
         },
         {
             "name": "maennchen/zipstream-php",

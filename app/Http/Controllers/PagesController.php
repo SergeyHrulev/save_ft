@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Articles;
 use App\Events;
 use Illuminate\Http\Request;
+use Lionix\SeoManager\Facades\SeoManager;
 
 class PagesController extends Controller
 {

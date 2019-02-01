@@ -39,22 +39,35 @@ class ArticlesController extends Controller
         return view('dashboard.pages.article_edit');
     }
 
-    public function setArticleImg(){
+    public function setArticleImg(Request $request){
         $articleImg = Articles::find(3);
-        $img = 'https://www.millionaireacts.com/wp-content/uploads/2018/01/Before-Opening-Business-to-Public-1.jpg';
-
+        //$img = 'https://www.millionaireacts.com/wp-content/uploads/2018/01/Before-Opening-Business-to-Public-1.jpg';
+        //$img = $request->file('file');
         //dd($img);
-        $articleImg->addMediaFromUrl($img)->preservingOriginal()->toMediaCollection('article-text-photo');
-        dd($articleImg);
+        $media = $articleImg->addMediaFromRequest('file')->toMediaCollection('article-text-photo');
+
+        dd($media->getUrl());
+
     }
 
     public function getArticleImg(){
-        $article = Articles::find(2);
-        $articleImg = $article->getMedia('article-text-photo');
-        $url = $articleImg[0]->getUrl();
-        $fullUrl = $articleImg[0]->getFullUrl();
-        $path = $articleImg[0]->getPath();
-        dd($articleImg, $url, $fullUrl, $path);
+        $article = Articles::find(3);
+        $articleImg = $article->getFirstMedia('article-text-photo');
+//        $url = $articleImg[0]->getUrl();
+//        $fullUrl = $articleImg[0]->getFullUrl();
+//        $path = $articleImg[0]->getPath();
+        dd($articleImg);
+    }
+
+    public function test(){
+        return view('dashboard.pages.test');
+    }
+
+    public function testServise(){
+        $name = 'stranix99';
+        $template = '/^[a-z0-9_-]{3,16}$/';
+        $test = preg_match($template, $name);
+        dd($test);
     }
 
     /**

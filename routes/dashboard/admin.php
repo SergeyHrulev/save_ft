@@ -17,6 +17,8 @@ Route::get('/get-roles-permissions', 'Admin\AdminController@getRolesPermissions'
 Route::post('/set-permission', 'Admin\AdminController@setPermission');
 Route::post('/set-role', 'Admin\AdminController@setRole');
 
-Route::get('/set-article-img', 'ArticlesController@setArticleImg');
+Route::any('/set-article-img', 'ArticlesController@setArticleImg');
 Route::get('/get-article-img', 'ArticlesController@getArticleImg');
+Route::get('/test', 'ArticlesController@test');
+Route::get('/test-test', 'ArticlesController@testServise');
 
