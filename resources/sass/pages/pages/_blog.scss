@@ -40,6 +40,7 @@
 
     &__info {
       padding: 15px 30px 30px;
+        max-width: 270px;
     }
 
     &__title {
@@ -49,6 +50,7 @@
       line-height: 26px;
       font-size: 18px;
       overflow: hidden;
+        max-width: 250px;
     }
 
     &__date {

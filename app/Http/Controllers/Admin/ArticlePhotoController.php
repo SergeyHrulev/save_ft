@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Articles;
 use App\Http\Controllers\Controller;
 use App\ArticlePhoto;
 use Illuminate\Http\Request;
@@ -15,15 +16,11 @@ class ArticlePhotoController extends Controller
 
     public function savePhoto(Request $request){
 
-        $article_id = 2;
+        $article = Articles::findOrFail($request->session()->get('article_id'));
 
-        try{
-            $file = Storage::disk('public')->put('\articles\/' . $article_id, $request->photo);
+        $media = $article->addMediaFromRequest('photo')->toMediaCollection('article-text-photo');
 
-            return $file;
-        }catch (\Exception $e){
-
-        }
+        return ['main' => $media->getUrl(), 'thumb' => $media->getUrl('thumb')];
     }
 
     public function savePhotoModel(Request $request){

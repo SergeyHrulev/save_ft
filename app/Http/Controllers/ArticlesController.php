@@ -32,10 +32,10 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        //$article = new Articles;
-        //$article->published = 0;
-        //$article->save();
-        //return view('dashboard.pages.article_edit', ['article' => $article->id]);
+        $article = new Articles;
+        $article->published = 0;
+        $article->save();
+        session(['article_id' => $article->id]);
         return view('dashboard.pages.article_edit');
     }
 
@@ -44,7 +44,7 @@ class ArticlesController extends Controller
         //$img = 'https://www.millionaireacts.com/wp-content/uploads/2018/01/Before-Opening-Business-to-Public-1.jpg';
         //$img = $request->file('file');
         //dd($img);
-        $media = $articleImg->addMediaFromRequest('file')->toMediaCollection('article-text-photo');
+        $media = $articleImg->addMediaFromRequest('photo')->toMediaCollection('article-text-photo');
 
         dd($media->getUrl());
 
@@ -59,16 +59,16 @@ class ArticlesController extends Controller
         dd($articleImg);
     }
 
-    public function test(){
-        return view('dashboard.pages.test');
+    public function test(Request $request){
+       $data = Articles::find(25);
+       $media = $data->getMedia('article-text-photo');
+       foreach ($media as $item){
+           echo $item->getUrl('thumb') . '<br>';
+       }
+       dd($media);
+
     }
 
-    public function testServise(){
-        $name = 'stranix99';
-        $template = '/^[a-z0-9_-]{3,16}$/';
-        $test = preg_match($template, $name);
-        dd($test);
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -79,12 +79,16 @@ class ArticlesController extends Controller
     public function store(Request $request, Slug $slug)
     {
         $this->middleware('role:user');
-        $article = Articles::findOrFail($request->id);
+        $article = Articles::findOrFail(session()->get('article_id'));
         $article->meta_title = $request->meta_title;
         $article->meta_description = $request->meta_description;
         $article->title = $request->title;
         $article->subtitle = $request->subtitle;
         $article->text = $request->text;
+        $article->img = $request->img;
+        $article->preview = $request->preview;
+        $article->alt = $request->alt;
+        $article->img_title = $request->img_title;
         $article->published = $request->published;
         $article->slug = $slug->make($request->title);
         $article->save();

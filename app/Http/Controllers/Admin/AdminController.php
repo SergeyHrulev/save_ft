@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Chapter;
+use App\Glossary;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -28,6 +30,15 @@ class AdminController extends Controller
 
     public function articles(){
         return view('dashboard.pages.articles');
+    }
+
+    public function showChapters(){
+        $chapters = Chapter::all();
+        $glossaries = Glossary::all();
+        return view('dashboard.pages.chapters', [
+            'chapters' => $chapters,
+            'glossaries' => $glossaries
+        ]);
     }
 
     public function getUsersWithRoles(){

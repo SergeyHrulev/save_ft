@@ -11,9 +11,9 @@
     <div class="row">
       <div class="col-12 col-xl-10">
         <div class="promo-text">
-          <div class="promo-date">10 ноября 2018</div>
-          <h1>{{ $article[0]->title }}о</h1>
-          <h3>{{ $article[0]->anons }}</h3>
+          <div class="promo-date">{{ $article[0]->updated_at->format('Y m d') }}</div>
+          <h1>{{ $article[0]->title }}</h1>
+          <h3>{{ $article[0]->subtitle }}</h3>
           <div class="share">
             <div class="share-text">Поделиться</div>
             <div class="share-content">
@@ -154,7 +154,7 @@
           <img src="{{ asset('img/temp/art-4.jpg') }}" alt="">
         </div>
         <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis aperiam, aliquam quod!</div>
+          <div class="blog-item__title">Lorem ipsum dolor sit amet, </div>
           <div class="blog-item__date">25 июня 17:45</div>
         </div>
       </a>
@@ -190,7 +190,7 @@
           <img src="{{ asset('img/temp/art-4.jpg') }}" alt="">
         </div>
         <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis aperiam, aliquam quod!</div>
+          <div class="blog-item__title">Lorem ipsum dolor sit amet, </div>
           <div class="blog-item__date">25 июня 17:45</div>
         </div>
       </a>
@@ -226,7 +226,7 @@
           <img src="{{ asset('img/temp/art-4.jpg') }}" alt="">
         </div>
         <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis aperiam, aliquam quod!</div>
+          <div class="blog-item__title">Lorem ipsum dolor sit amet,</div>
           <div class="blog-item__date">25 июня 17:45</div>
         </div>
       </a>
@@ -262,7 +262,7 @@
           <img src="{{ asset('img/temp/art-4.jpg') }}" alt="">
         </div>
         <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis aperiam, aliquam quod!</div>
+          <div class="blog-item__title">Lorem ipsum dolor sit amet,</div>
           <div class="blog-item__date">25 июня 17:45</div>
         </div>
       </a>

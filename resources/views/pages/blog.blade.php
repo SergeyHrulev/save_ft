@@ -11,9 +11,9 @@
     <div class="row">
       <div class="col-12 col-xl-10">
         <div class="promo-text">
-          <div class="promo-date">10 ноября 2018</div>
-          <h1>Кризис хорошо или плохо</h1>
-          <h3>Ведем бухгалтерию и кадровый учет, рассчитываем зарплату, сопровождаем ERP-системы для заказчиков, требующих безупречного качества</h3>
+          <div class="promo-date">{{ $articles->first()->updated_at->formatLocalized('%Y %B %d') }}</div>
+          <h1>{{ $articles->first()->title }}</h1>
+          <h3>{{ $articles->first()->subtitle }}</h3>
         </div>
         <!-- /promo-text -->
 
@@ -37,10 +37,10 @@
         @foreach($articles as $article)
             <a class="blog-item" href="{{ url('articles/' . $article->slug) }}">
                 <div class="blog-item__pic">
-                    <img src="{{ asset($article->preview) }}" alt="{{ $article->alt }}">
+                    <img src="{{ $article->preview }}" alt="{{ $article->alt }}">
                 </div>
                 <div class="blog-item__info">
-                    <div class="blog-item__title">{{ $article->anons }}</div>
+                    <div class="blog-item__title">{{ $article->subtitle }}</div>
                     <div class="blog-item__date">{{ $article->updated_at->formatLocalized('%Y %B %d') }}</div>
                 </div>
             </a>
@@ -49,6 +49,7 @@
       <a class="blog-item" href="#">
         <div class="blog-item__pic">
           <img src="{{ asset('img/temp/art-1.jpg') }}" alt="">
+            <div class="blog-item__title">BDO получила престижную премию Network of the Year</div>
         </div>
         <div class="blog-item__info">
           <div class="blog-item__title">BDO получила престижную премию Network of the Year</div>
