@@ -24,7 +24,21 @@
         <div class="col-12">
             <div class="form-group">
                 <label for="">Главное фото</label>
-                <input type="file" class="form-control">
+                <input type="file" class="form-control" @change="onSelectedPhoto" name="photo" ref="photo">
+                <small class="form-text"></small>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                <label for="">Главное фото ALT</label>
+                <input type="text" class="form-control" v-model="mainPhoto.alt">
+                <small class="form-text"></small>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-group">
+                <label for="">Главное фото TITLE</label>
+                <input type="text" class="form-control" v-model="mainPhoto.title">
                 <small class="form-text"></small>
             </div>
         </div>
@@ -116,7 +130,6 @@
     import axios from 'axios';
     export default {
         name: "CreateArticleComponent",
-        //props: ['article'],
         data(){
             return{
                 meta_title: '',
@@ -127,23 +140,32 @@
                 published: 0,
                 edited_text: '',
                 file: '',
+                photo: '',
                 articlePhoto: {
                     photo: '',
                     alt: '',
                     title: '',
-
+                },
+                mainPhoto: {
+                    photo: '',
+                    thumb: '',
+                    alt: '',
+                    title: ''
                 }
             }
         },
         methods:{
             saveArticle(){
                 axios.post('/admin-dashboard/articles', {
-                    id: this.article,
                     meta_title: this.meta_title,
                     meta_description: this.meta_description,
                     title: this.title,
                     subtitle: this.subtitle,
                     text: this.edited_text,
+                    img: this.mainPhoto.photo,
+                    preview: this.mainPhoto.thumb,
+                    alt: this.mainPhoto.alt,
+                    img_title: this.mainPhoto.title,
                     published: this.published,
                 }).then(response => {
                     window.location.href = window.location.origin + '/admin-dashboard/articles';
@@ -161,7 +183,10 @@
                     title: this.articlePhoto.title,
                 }).then(response => {
                     console.log(response.data);
-                    this.edited_text += '<img src="' + response.data.photo + '" alt="' + response.data.alt + '">';
+                    this.edited_text += '<img src="' + response.data.photo + '" alt="' + response.data.alt + '"' + 'title="' + response.data.title + '">';
+                    this.articlePhoto.photo = '';
+                    this.articlePhoto.alt = '';
+                    this.articlePhoto.title = '';
                 })
             },
             setBlockqoute(){
@@ -186,6 +211,21 @@
                 }).then(response => {
                     console.log(response.data);
                     this.articlePhoto.photo = response.data;
+                });
+            },
+            onSelectedPhoto(){
+                let formData = new FormData();
+                this.photo = this.$refs.photo.files[0];
+                formData.append('photo', this.photo);
+                console.log(formData);
+                axios.post('/admin-dashboard/articles/savephoto', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                }).then(response => {
+                    console.log(response.data);
+                    this.mainPhoto.photo = response.data.main;
+                    this.mainPhoto.thumb = response.data.thumb;
                 });
             }
         }

@@ -13120,6 +13120,7 @@ svg path {
 
 .blog-item__info {
   padding: 15px 30px 30px;
+  max-width: 270px;
 }
 
 .blog-item__title {
@@ -13129,6 +13130,7 @@ svg path {
   line-height: 26px;
   font-size: 18px;
   overflow: hidden;
+  max-width: 250px;
 }
 
 .blog-item__date {

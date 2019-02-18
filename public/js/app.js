@@ -1971,10 +1971,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CreateArticleComponent",
-  //props: ['article'],
   data: function data() {
     return {
       meta_title: '',
@@ -1985,8 +1998,15 @@ __webpack_require__.r(__webpack_exports__);
       published: 0,
       edited_text: '',
       file: '',
+      photo: '',
       articlePhoto: {
         photo: '',
+        alt: '',
+        title: ''
+      },
+      mainPhoto: {
+        photo: '',
+        thumb: '',
         alt: '',
         title: ''
       }
@@ -1995,12 +2015,15 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     saveArticle: function saveArticle() {
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/admin-dashboard/articles', {
-        id: this.article,
         meta_title: this.meta_title,
         meta_description: this.meta_description,
         title: this.title,
         subtitle: this.subtitle,
         text: this.edited_text,
+        img: this.mainPhoto.photo,
+        preview: this.mainPhoto.thumb,
+        alt: this.mainPhoto.alt,
+        img_title: this.mainPhoto.title,
         published: this.published
       }).then(function (response) {
         window.location.href = window.location.origin + '/admin-dashboard/articles';
@@ -2020,7 +2043,10 @@ __webpack_require__.r(__webpack_exports__);
         title: this.articlePhoto.title
       }).then(function (response) {
         console.log(response.data);
-        _this.edited_text += '<img src="' + response.data.photo + '" alt="' + response.data.alt + '">';
+        _this.edited_text += '<img src="' + response.data.photo + '" alt="' + response.data.alt + '"' + 'title="' + response.data.title + '">';
+        _this.articlePhoto.photo = '';
+        _this.articlePhoto.alt = '';
+        _this.articlePhoto.title = '';
       });
     },
     setBlockqoute: function setBlockqoute() {
@@ -2042,6 +2068,23 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         console.log(response.data);
         _this2.articlePhoto.photo = response.data;
+      });
+    },
+    onSelectedPhoto: function onSelectedPhoto() {
+      var _this3 = this;
+
+      var formData = new FormData();
+      this.photo = this.$refs.photo.files[0];
+      formData.append('photo', this.photo);
+      console.log(formData);
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/admin-dashboard/articles/savephoto', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then(function (response) {
+        console.log(response.data);
+        _this3.mainPhoto.photo = response.data.main;
+        _this3.mainPhoto.thumb = response.data.thumb;
       });
     }
   }
@@ -41094,7 +41137,80 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(0),
+    _c("div", { staticClass: "col-12" }, [
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "" } }, [_vm._v("Главное фото")]),
+        _vm._v(" "),
+        _c("input", {
+          ref: "photo",
+          staticClass: "form-control",
+          attrs: { type: "file", name: "photo" },
+          on: { change: _vm.onSelectedPhoto }
+        }),
+        _vm._v(" "),
+        _c("small", { staticClass: "form-text" })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-12" }, [
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "" } }, [_vm._v("Главное фото ALT")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.mainPhoto.alt,
+              expression: "mainPhoto.alt"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text" },
+          domProps: { value: _vm.mainPhoto.alt },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.mainPhoto, "alt", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("small", { staticClass: "form-text" })
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-12" }, [
+      _c("div", { staticClass: "form-group" }, [
+        _c("label", { attrs: { for: "" } }, [_vm._v("Главное фото TITLE")]),
+        _vm._v(" "),
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.mainPhoto.title,
+              expression: "mainPhoto.title"
+            }
+          ],
+          staticClass: "form-control",
+          attrs: { type: "text" },
+          domProps: { value: _vm.mainPhoto.title },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.mainPhoto, "title", $event.target.value)
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("small", { staticClass: "form-text" })
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-12" }, [
       _c("div", { staticClass: "form-group" }, [
@@ -41329,7 +41445,7 @@ var render = function() {
           { staticClass: "modal-dialog", attrs: { role: "document" } },
           [
             _c("div", { staticClass: "modal-content" }, [
-              _vm._m(1),
+              _vm._m(0),
               _vm._v(" "),
               _c("div", { staticClass: "modal-body" }, [
                 _c("div", { staticClass: "form-group" }, [
@@ -41426,20 +41542,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("label", { attrs: { for: "" } }, [_vm._v("Главное фото")]),
-        _vm._v(" "),
-        _c("input", { staticClass: "form-control", attrs: { type: "file" } }),
-        _vm._v(" "),
-        _c("small", { staticClass: "form-text" })
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

@@ -22,6 +22,9 @@ class Articles extends Model implements HasMedia
         'title',
         'subtitle',
         'text',
+        'img',
+        'alt',
+        'img_title',
         'published'
     ];
 

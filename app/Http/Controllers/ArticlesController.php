@@ -32,30 +32,43 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        //$article = new Articles;
-        //$article->published = 0;
-        //$article->save();
-        //return view('dashboard.pages.article_edit', ['article' => $article->id]);
+        $article = new Articles;
+        $article->published = 0;
+        $article->save();
+        session(['article_id' => $article->id]);
         return view('dashboard.pages.article_edit');
     }
 
-    public function setArticleImg(){
+    public function setArticleImg(Request $request){
         $articleImg = Articles::find(3);
-        $img = 'https://www.millionaireacts.com/wp-content/uploads/2018/01/Before-Opening-Business-to-Public-1.jpg';
-
+        //$img = 'https://www.millionaireacts.com/wp-content/uploads/2018/01/Before-Opening-Business-to-Public-1.jpg';
+        //$img = $request->file('file');
         //dd($img);
-        $articleImg->addMediaFromUrl($img)->preservingOriginal()->toMediaCollection('article-text-photo');
-        dd($articleImg);
+        $media = $articleImg->addMediaFromRequest('photo')->toMediaCollection('article-text-photo');
+
+        dd($media->getUrl());
+
     }
 
     public function getArticleImg(){
-        $article = Articles::find(2);
-        $articleImg = $article->getMedia('article-text-photo');
-        $url = $articleImg[0]->getUrl();
-        $fullUrl = $articleImg[0]->getFullUrl();
-        $path = $articleImg[0]->getPath();
-        dd($articleImg, $url, $fullUrl, $path);
+        $article = Articles::find(3);
+        $articleImg = $article->getFirstMedia('article-text-photo');
+//        $url = $articleImg[0]->getUrl();
+//        $fullUrl = $articleImg[0]->getFullUrl();
+//        $path = $articleImg[0]->getPath();
+        dd($articleImg);
     }
+
+    public function test(Request $request){
+       $data = Articles::find(25);
+       $media = $data->getMedia('article-text-photo');
+       foreach ($media as $item){
+           echo $item->getUrl('thumb') . '<br>';
+       }
+       dd($media);
+
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -66,12 +79,16 @@ class ArticlesController extends Controller
     public function store(Request $request, Slug $slug)
     {
         $this->middleware('role:user');
-        $article = Articles::findOrFail($request->id);
+        $article = Articles::findOrFail(session()->get('article_id'));
         $article->meta_title = $request->meta_title;
         $article->meta_description = $request->meta_description;
         $article->title = $request->title;
         $article->subtitle = $request->subtitle;
         $article->text = $request->text;
+        $article->img = $request->img;
+        $article->preview = $request->preview;
+        $article->alt = $request->alt;
+        $article->img_title = $request->img_title;
         $article->published = $request->published;
         $article->slug = $slug->make($request->title);
         $article->save();
