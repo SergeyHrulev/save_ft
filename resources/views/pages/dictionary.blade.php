@@ -73,6 +73,16 @@
         <div class="dictionary-sidebar__caption">Темы</div>
 
         <div class="dictionary-menu">
+            @foreach($chapters as $chapter)
+                <div class="dictionary-menu__item">
+                    <div class="dictionary-menu__title" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">{{ $chapter->title }}</div>
+                    <ul class="dictionary-menu__submenu" id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        @foreach($chapter->glossary as $glossary)
+                        <li><a class="dictionary-menu__submenu-link" href="{{ url('glossary/' . $glossary->slug) }}">{{ $glossary->title }}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endforeach
           <div class="dictionary-menu__item">
             <div class="dictionary-menu__title">Акции</div>
             <ul class="dictionary-menu__submenu">
@@ -164,34 +174,65 @@
     </div>
     <!-- /col -->
     <div class="col-12 col-md-8">
-      <div class="breadcrumbs">
-        <div class="breadcrumbs-content">
-          <a class="breadcrumbs-item" href="/">Финтекс</a>
-          <a class="breadcrumbs-item" href="#">Деньги</a>
-        </div>
-      </div>
-
+       @if(isset($dictionary))
+            {{ Breadcrumbs::render('glossary', $dictionary[0]) }}
+           @else
+            {{ Breadcrumbs::render('glossaries') }}
+           @endif
+{{--        {{ Breadcrumbs::render('glossary', isset($dictionary) ? $dictionary[0] : $chapters->first()->glossary->first()) }}--}}
+      {{--<div class="breadcrumbs">--}}
+        {{--<div class="breadcrumbs-content">--}}
+          {{--<a class="breadcrumbs-item" href="/">Финтекс</a>--}}
+          {{--<a class="breadcrumbs-item" href="#">Деньги</a>--}}
+        {{--</div>--}}
+      {{--</div>--}}
+        @if(isset($dictionary))
       <div class="dictionary-info">
 
-        <h1 class="dictionary-caption">Антиинфляционная политика предложения</h1>
+        <h1 class="dictionary-caption">{{ $dictionary[0]->title }}</h1>
         <div class="dictionary-text">
-          <p>Антиинфляционная политика предложения - макроэкономическая политика, направленная на увеличение естественного уровня национального продукта с целью сокращения уровня инфляции. Основным инструментом такой политики является сокращение предельной ставки налогообложения в целях стимулирования роста объема выпуска.</p>
+          <p>{{ $dictionary[0]->text }}</p>
         </div>
         <div class="dictionary-english">
-          <p><span>По-английски:</span>  Supply-side anti-inflation policy</p>
+          <p><span>По-английски:</span>  {{ $dictionary[0]->english_synonims }}</p>
         </div>
         <div class="dictionary-category">
           <div class="dictionary-category__caption">Ещё в этой категории</div>
           <div class="dictionary-category__list">
-            <a class="dictionary-category__item" href="#">Аванс срочный</a>
-            <a class="dictionary-category__item" href="#">Авансированная стоимость</a>
-            <a class="dictionary-category__item" href="#">Банковский кредит</a>
-            <a class="dictionary-category__item" href="#">Валюта</a>
-            <a class="dictionary-category__item" href="#">Гиперинфляция</a>
+            @foreach($category as $item)
+            <a class="dictionary-category__item" href="{{ url('glossary/' . $item->slug) }}">{{ $item->title }}</a>
+              @endforeach
+            {{--<a class="dictionary-category__item" href="#">Авансированная стоимость</a>--}}
+            {{--<a class="dictionary-category__item" href="#">Банковский кредит</a>--}}
+            {{--<a class="dictionary-category__item" href="#">Валюта</a>--}}
+            {{--<a class="dictionary-category__item" href="#">Гиперинфляция</a>--}}
           </div>
         </div>
 
       </div>
+        @else
+            <div class="dictionary-info">
+
+                <h1 class="dictionary-caption">{{ $glossary->title }}</h1>
+                <div class="dictionary-text">
+                    <p>{{ $glossary->text }}</p>
+                </div>
+                <div class="dictionary-english">
+                    <p><span>По-английски:</span>  Supply-side anti-inflation policy</p>
+                </div>
+                <div class="dictionary-category">
+                    <div class="dictionary-category__caption">Ещё в этой категории</div>
+                    <div class="dictionary-category__list">
+                        <a class="dictionary-category__item" href="#">Аванс срочный</a>
+                        <a class="dictionary-category__item" href="#">Авансированная стоимость</a>
+                        <a class="dictionary-category__item" href="#">Банковский кредит</a>
+                        <a class="dictionary-category__item" href="#">Валюта</a>
+                        <a class="dictionary-category__item" href="#">Гиперинфляция</a>
+                    </div>
+                </div>
+
+            </div>
+        @endif
       <!-- /dictionary-info -->
     </div>
     <!-- /col -->

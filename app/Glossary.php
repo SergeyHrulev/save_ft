@@ -11,6 +11,7 @@ class Glossary extends Model
         'chapter_id',
         'meta_title',
         'meta_description',
+        'letter',
         'slug',
         'title',
         'english_synonims',

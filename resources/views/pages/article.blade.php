@@ -121,151 +121,16 @@
     </div>
   </div>
   <div class="similar-slider">
+        @foreach($articles as $item)
+            @include('pages.article.article-slider', [
+            'slug' => $item->slug,
+            'img' => $item->img,
+            'img_alt' => $item->alt,
+            'title' => $item->title,
+            'date' => $item->updated_at,
+            ])
+        @endforeach
 
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-1.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">BDO получила престижную премию Network of the Year</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-2.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor sit amet.</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-3.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor.</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-4.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor sit amet, </div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-1.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">BDO получила престижную премию Network of the Year</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-2.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor sit amet.</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-3.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor.</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-4.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor sit amet, </div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-1.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">BDO получила престижную премию Network of the Year</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-2.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor sit amet.</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-3.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor.</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-4.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor sit amet,</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-1.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">BDO получила престижную премию Network of the Year</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-2.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor sit amet.</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-3.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor.</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
-      <a class="blog-item" href="#">
-        <div class="blog-item__pic">
-          <img src="{{ asset('img/temp/art-4.jpg') }}" alt="">
-        </div>
-        <div class="blog-item__info">
-          <div class="blog-item__title">Lorem ipsum dolor sit amet,</div>
-          <div class="blog-item__date">25 июня 17:45</div>
-        </div>
-      </a>
   </div>
   <!-- /similar-slider -->
 

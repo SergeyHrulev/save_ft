@@ -8,6 +8,7 @@
 require('./bootstrap');
 require('slick-carousel');
 require('./script');
+require('jquery-datetimepicker');
 
 
 window.Vue = require('vue');

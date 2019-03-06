@@ -59,6 +59,7 @@
 
 
 <!-- Modal Callback-->
+@include('partials.modals.callback')
 <div class="modal fade modal-callback" id="modal-callback" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">

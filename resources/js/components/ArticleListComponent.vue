@@ -10,7 +10,8 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Название статьи</th>
-                <th scope="col">Подзаголовок</th>
+                <th scope="col" width="250">Подзаголовок</th>
+                <th scope="col">Опубликована</th>
                 <th scope="col">Дата создания</th>
                 <th scope="col">Редактирование</th>
             </tr>
@@ -20,6 +21,7 @@
                 <th scope="row">{{ article.id }}</th>
                 <td>{{ article.title }}</td>
                 <td>{{ article.subtitle }}</td>
+                <td><input class="form-check-input" type="checkbox" v-if="article.subtitle !== 0" checked><input class="form-check-input" type="checkbox" v-else></td>
                 <td>{{ article.created_at }}</td>
                 <td>
                     <button type="button" class="btn btn-primary" @click="editArticles(article.id)">Редактировать</button>

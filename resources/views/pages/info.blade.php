@@ -1,6 +1,5 @@
-//= html/header.html
-
-
+@extends('layouts.app')
+@section('content')
 <div class="promo promo-big promo-main">
 
   <div class="promo-pic">
@@ -135,7 +134,4 @@
 
 </section>
 <!-- /company -->
-
-//= html/order.html
-
-//= html/footer.html
+@endsection

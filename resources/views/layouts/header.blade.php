@@ -83,7 +83,7 @@
           </li>
           <li class="menu-item"><a class="menu-link" href="{{ route('events') }}">Мероприятия</a></li>
           <li class="menu-item"><a class="menu-link" href="{{ route('articles') }}">Статьи</a></li>
-          <li class="menu-item"><a class="menu-link" href="{{ route('glossary') }}">Финсловарь</a></li>
+          <li class="menu-item"><a class="menu-link" href="{{ route('glossaries') }}">Финсловарь</a></li>
           <li class="menu-item"><a class="menu-link" href="{{ route('contacts') }}">Контакты</a></li>
           <li class="menu-item menu-entry"><a class="menu-link" href="javascript:void(0);"  data-toggle="modal" data-target="#modal-login">Вход</a></li>
         </ul>
@@ -101,8 +101,8 @@
             @endguest
     </div>
     <div class="header-phone">
-      <a class="header-phone__number" href="tel:+79998889988">+7 999 888 99 88</a>
-      <div class="header-phone__callback" data-toggle="modal" data-target="#modal-callback">Обратный звонок</div>
+      <a class="header-phone__number" href="tel:+78129809572">(812) 980-95-72</a>
+      <div class="header-phone__callback" data-toggle="modal" data-target="#callback">Обратный звонок</div>
     </div>
     <div class="mobile-menu mobile-menu--close">
       <span></span>

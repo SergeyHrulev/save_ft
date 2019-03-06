@@ -10,6 +10,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    @include('partials.head_links', ['paginator' => ${Request::route()->getName()}])
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 

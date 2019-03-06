@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +16,8 @@
 Route::get('/', 'PagesController@index')->name('index');
 Route::get('/articles', 'PagesController@articles')->name('articles');
 Route::get('/articles/{slug}', 'PagesController@article')->name('article');
-Route::get('/glossary', 'PagesController@glossary')->name('glossary');
+Route::get('/glossaries', 'PagesController@glossaries')->name('glossaries');
+Route::get('/glossary/{slug}', 'PagesController@glossary')->name('glossary');
 Route::get('/events', 'PagesController@events')->name('events');
 Route::get('/event/{slug}', 'PagesController@event')->name('event');
 Route::get('/contacts', 'PagesController@contacts')->name('contacts');
@@ -38,3 +41,13 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 Route::group(['middleware' => ['role:user'], 'prefix' => 'admin-dashboard'], function (){
     require base_path('routes/dashboard/admin.php');
 });
+
+Route::post('/subscribe', 'MailingController@subscribe')->name('subscribe');
+Route::get('{id}/unsubscribe', function (Request $request, $id){
+    if (!$request->hasValidSignature()){
+        abort(401);
+    }else{
+        \App\Mailing::destroy($id);
+        return redirect()->route('index')->with('successful_destroy', 'Вы успешно отменили подписку на нашу рассылку');
+    }
+})->name('unsubscribe');

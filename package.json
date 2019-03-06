@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.5.21"
     },
     "dependencies": {
+        "jquery-datetimepicker": "^2.5.21",
         "slick-carousel": "^1.8.1"
     }
 }

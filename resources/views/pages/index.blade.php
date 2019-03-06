@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+    @include('notifications.success_subscription')
+    @include('notifications.success_unsubscription')
 <div class="promo promo-big promo-main">
 
   <div class="promo-pic">
@@ -337,9 +339,11 @@
 
     <div class="row">
       <div class="col-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
-        <form class="subscribe-form">
-          <input class="subscribe-input" type="text" placeholder="Ваш e-mail">
-          <buttom class="button button-cta button-mini">Отправить</buttom>
+        <form class="subscribe-form" action="{{ route('subscribe') }}" method="post">
+            @csrf
+            @honeypot
+          <input name="email" class="subscribe-input" type="text" placeholder="Ваш e-mail">
+          <button type="submit" class="button button-cta button-mini">Отправить</button>
         </form>
       </div>
     </div>
@@ -455,42 +459,9 @@
 
       <div class="col-12 col-lg-6">
         <div class="interesting-article">
-          <a class="interesting-article__item" href="#">
-            <div class="interesting-article__pic">
-              <img src="{{ asset('img/temp/art-1.jpg') }}" alt="">
-            </div>
-            <div class="interesting-article__info">
-              <div class="interesting-article__title">BDO получила престижную премию Network of the Year</div>
-              <div class="interesting-article__date">25 июня 17:45</div>
-            </div>
-          </a>
-          <a class="interesting-article__item" href="#">
-            <div class="interesting-article__pic">
-              <img src="{{ asset('img/temp/art-2.jpg') }}" alt="">
-            </div>
-            <div class="interesting-article__info">
-              <div class="interesting-article__title">Lorem ipsum dolor sit.</div>
-              <div class="interesting-article__date">25 июня 17:45</div>
-            </div>
-          </a>
-          <a class="interesting-article__item" href="#">
-            <div class="interesting-article__pic">
-              <img src="{{ asset('img/temp/art-3.jpg') }}" alt="">
-            </div>
-            <div class="interesting-article__info">
-              <div class="interesting-article__title">Lorem ipsum dolor sit amet, consectetur adipisicing.</div>
-              <div class="interesting-article__date">25 июня 17:45</div>
-            </div>
-          </a>
-          <a class="interesting-article__item" href="#">
-            <div class="interesting-article__pic">
-              <img src="{{ asset('img/order-bg.jpg') }}" alt="">
-            </div>
-            <div class="interesting-article__info">
-              <div class="interesting-article__title">Lorem ipsum dolor.</div>
-              <div class="interesting-article__date">25 июня 17:45</div>
-            </div>
-          </a>
+          @foreach($articles as $article)
+              @include('partials.main_page_article', ['article' => $article])
+              @endforeach
         </div>
         <!-- /interesting-article -->
       </div>
@@ -547,15 +518,10 @@
         <!-- /interesting-event -->
       </div>
       <!-- /col -->
-
-
-
     </div>
     <!-- /row -->
-
   </div>
   <!-- /container -->
-
 </section>
 <!-- /interesting -->
 @stop
