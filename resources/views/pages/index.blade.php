@@ -2,6 +2,16 @@
 @section('content')
     @include('notifications.success_subscription')
     @include('notifications.success_unsubscription')
+    @include('notifications.order_success')
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+                    @endforeach
+            </ul>
+        </div>
+        @endif
 <div class="promo promo-big promo-main">
 
   <div class="promo-pic">
@@ -18,41 +28,7 @@
         </div>
       </div>
       <!-- /col -->
-      <div class="col-12 col-md-6">
-        <div class="promo-form">
-          <div class="callback">
-            <form class="callback-form" action="">
-              <div class="callback-form__caption">Заказать бесплатную консультацию</div>
-              <div class="callback-form__content">
-                <div class="callback-form__block">
-                  <div class="callback-form__title">Имя</div>
-                  <input class="callback-form__input" type="text">
-                </div>
-                <div class="callback-form__block">
-                  <div class="callback-form__title">Телефон</div>
-                  <input class="callback-form__input" type="phone">
-                </div>
-                <div class="callback-form__block">
-                  <div class="callback-form__title">Email</div>
-                  <input class="callback-form__input" type="email">
-                </div>
-              </div>
-              <div class="callback-form__button">
-                <button class="button button-cta">ЗАКАЗАТЬ</button>
-              </div>
-              <div class="callback-privacy">
-                <div class="callback-privacy__check">
-                  <input type="checkbox" checked>
-                </div>
-                <div class="callback-privacy__text">Я согласен с использованием моих персональных данных для обработки данного обращения</div>
-              </div>
-            </form>
-          </div>
-          <!-- /callback -->
-        </div>
-        <!-- /promo-form -->
-
-      </div>
+    @include('partials.order')
       <!-- /col -->
     </div>
     <!-- /row -->
@@ -144,7 +120,7 @@
     <!-- /advantages-content -->
 
     <div class="page-section__more">
-       <button class="button button-cta button-big" data-toggle="modal" data-target="#modal-callback">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
+       <button class="button button-cta button-big" data-toggle="modal" data-target="#order">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
     </div>
 
   </div>
@@ -310,7 +286,7 @@
 
 
     <div class="page-section__more">
-       <button class="button button-cta button-big" data-toggle="modal" data-target="#modal-callback">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
+       <button class="button button-cta button-big" data-toggle="modal" data-target="#order">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
     </div>
 
 
@@ -332,7 +308,7 @@
       <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3">
           <h2 class="page-section__title">Подпишитесь на нашу рассылку</h2>
-          <h3 class="page-section__subtitle">Чтобы быть в курсе новостей по управлению финансами</h3>
+          <h3 class="page-section__subtitle">Напоминаем о новых статьях в блоге, рассказываем о хитростях, делимся полезным материалом</h3>
         </div>
       </div>
     </div>
@@ -370,63 +346,78 @@
     <div class="review-content">
 
       <div class="review-slider">
-
-        <div class="review-item">
-          <div class="review-author">
-            <div class="review-author__pic">
-              <img src="{{ asset('img/temp/author-1.jpg') }}" alt="">
-            </div>
-            <div class="review-author__info">
-              <div class="review-author__name">Мария Павликова</div>
-              <div class="review-author__company">Директор “Рога и Копыта”</div>
-            </div>
+        @foreach($reviews as $review)
+          <div class="review-item">
+              <div class="review-author">
+                  <div class="review-author__pic">
+                      <img src="{{ asset($review->avatar) }}" alt="">
+                  </div>
+                  <div class="review-author__info">
+                      <div class="review-author__name">{{ $review->name }}</div>
+                      <div class="review-author__company">{{ $review->company }}</div>
+                  </div>
+              </div>
+              <div class="review-text">
+                  {{ $review->text }}
+              </div>
           </div>
-          <div class="review-text">
-            Равным образом начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки новых предложений.
-          </div>
-        </div>
-        <div class="review-item">
-          <div class="review-author">
-            <div class="review-author__pic">
-              <img src="{{ asset('img/temp/author-2.jpg') }}" alt="">
-            </div>
-            <div class="review-author__info">
-              <div class="review-author__name">Мария Павликова</div>
-              <div class="review-author__company">Директор “Рога и Копыта”</div>
-            </div>
-          </div>
-          <div class="review-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat fugiat, voluptates delectus, et labore architecto commodi. Facilis qui, id!
-          </div>
-        </div>
-        <div class="review-item">
-          <div class="review-author">
-            <div class="review-author__pic">
-              <img src="{{ asset('img/temp/author-3.jpg') }}" alt="">
-            </div>
-            <div class="review-author__info">
-              <div class="review-author__name">Мария Павликова</div>
-              <div class="review-author__company">Директор “Рога и Копыта”</div>
-            </div>
-          </div>
-          <div class="review-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, exercitationem iusto suscipit voluptatum! Porro ut ratione hic voluptas expedita nam. Voluptates iste sit voluptas! Vero ipsa ab voluptate quidem mollitia.
-          </div>
-        </div>
-        <div class="review-item">
-          <div class="review-author">
-            <div class="review-author__pic">
-              <img src="{{ asset('img/temp/author-4.jpg') }}" alt="">
-            </div>
-            <div class="review-author__info">
-              <div class="review-author__name">Мария Павликова</div>
-              <div class="review-author__company">Директор “Рога и Копыта”</div>
-            </div>
-          </div>
-          <div class="review-text">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut molestiae, delectus, quas rerum molestias vel nemo dolore nesciunt maxime voluptatum eum quos sit reiciendis aspernatur.
-          </div>
-        </div>
+          @endforeach
+        {{--<div class="review-item">--}}
+          {{--<div class="review-author">--}}
+            {{--<div class="review-author__pic">--}}
+              {{--<img src="{{ asset('img/temp/author-1.jpg') }}" alt="">--}}
+            {{--</div>--}}
+            {{--<div class="review-author__info">--}}
+              {{--<div class="review-author__name">Мария Павликова</div>--}}
+              {{--<div class="review-author__company">Директор “Рога и Копыта”</div>--}}
+            {{--</div>--}}
+          {{--</div>--}}
+          {{--<div class="review-text">--}}
+            {{--Равным образом начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки новых предложений.--}}
+          {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="review-item">--}}
+          {{--<div class="review-author">--}}
+            {{--<div class="review-author__pic">--}}
+              {{--<img src="{{ asset('img/temp/author-2.jpg') }}" alt="">--}}
+            {{--</div>--}}
+            {{--<div class="review-author__info">--}}
+              {{--<div class="review-author__name">Мария Павликова</div>--}}
+              {{--<div class="review-author__company">Директор “Рога и Копыта”</div>--}}
+            {{--</div>--}}
+          {{--</div>--}}
+          {{--<div class="review-text">--}}
+            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat fugiat, voluptates delectus, et labore architecto commodi. Facilis qui, id!--}}
+          {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="review-item">--}}
+          {{--<div class="review-author">--}}
+            {{--<div class="review-author__pic">--}}
+              {{--<img src="{{ asset('img/temp/author-3.jpg') }}" alt="">--}}
+            {{--</div>--}}
+            {{--<div class="review-author__info">--}}
+              {{--<div class="review-author__name">Мария Павликова</div>--}}
+              {{--<div class="review-author__company">Директор “Рога и Копыта”</div>--}}
+            {{--</div>--}}
+          {{--</div>--}}
+          {{--<div class="review-text">--}}
+            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, exercitationem iusto suscipit voluptatum! Porro ut ratione hic voluptas expedita nam. Voluptates iste sit voluptas! Vero ipsa ab voluptate quidem mollitia.--}}
+          {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="review-item">--}}
+          {{--<div class="review-author">--}}
+            {{--<div class="review-author__pic">--}}
+              {{--<img src="{{ asset('img/temp/author-4.jpg') }}" alt="">--}}
+            {{--</div>--}}
+            {{--<div class="review-author__info">--}}
+              {{--<div class="review-author__name">Мария Павликова</div>--}}
+              {{--<div class="review-author__company">Директор “Рога и Копыта”</div>--}}
+            {{--</div>--}}
+          {{--</div>--}}
+          {{--<div class="review-text">--}}
+            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut molestiae, delectus, quas rerum molestias vel nemo dolore nesciunt maxime voluptatum eum quos sit reiciendis aspernatur.--}}
+          {{--</div>--}}
+        {{--</div>--}}
 
       </div>
       <!-- /review-slider -->
@@ -471,47 +462,18 @@
         <div class="interesting-event">
           <div class="interesting-event__caption">
             <div class="interesting-event__title">Мероприятия</div>
-            <a class="interesting-event__all" href="#">Смотреть все</a>
+            <a class="interesting-event__all" href="{{ route('articles') }}">Смотреть все</a>
           </div>
           <div class="interesting-event__content">
-
-            <div class="interesting-event__item">
-              <div class="interesting-event__pic">
-                <img src="{{ asset('img/temp/event-1.jpg') }}" alt="">
-              </div>
-              <div class="interesting-event__info">
-                <a class="interesting-event__name" href="#">Конференция «HR&FINANCE: меняем бизнес вместе»</a>
-                <div class="interesting-event__date">25 июня 17:45</div>
-              </div>
-            </div>
-            <div class="interesting-event__item">
-              <div class="interesting-event__pic">
-                <img src="{{ asset('img/temp/event-2.jpg') }}" alt="">
-              </div>
-              <div class="interesting-event__info">
-                <a class="interesting-event__name" href="#">Lorem ipsum dolor sit amet.</a>
-                <div class="interesting-event__date">25 июня 17:45</div>
-              </div>
-            </div>
-            <div class="interesting-event__item">
-              <div class="interesting-event__pic">
-                <img src="{{ asset('img/temp/event-3.jpg') }}" alt="">
-              </div>
-              <div class="interesting-event__info">
-                <a class="interesting-event__name" href="#">Lorem ipsum dolor sit amet, consectetur adipisicing.</a>
-                <div class="interesting-event__date">25 июня 17:45</div>
-              </div>
-            </div>
-            <div class="interesting-event__item">
-              <div class="interesting-event__pic">
-                <img src="{{ asset('img/temp/event-4.jpg') }}" alt="">
-              </div>
-              <div class="interesting-event__info">
-                <a class="interesting-event__name" href="#">Lorem ipsum dolor.</a>
-                <div class="interesting-event__date">25 июня 17:45</div>
-              </div>
-            </div>
-
+              @foreach($events as $event)
+                @include('partials.main_page_events', [
+                  'img' => $event->img,
+                  'alt' => $event->alt,
+                  'slug' => $event->slug,
+                  'title' => $event->title,
+                  'created' => $event->created_at,
+                  ])
+              @endforeach
           </div>
           <!-- /interesting-event__content -->
         </div>

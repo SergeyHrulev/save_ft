@@ -7,20 +7,23 @@
                     <img class="svg" src="{{ asset('img/icon/close.svg') }}" alt="">
                 </button>
                 <div class="callback">
-                    <form class="callback-form" action="">
+                    <form class="callback-form" action="{{ url('/send-order') }}" method="post">
+                        @csrf
+                        @honeypot
+                        <input type="hidden" name="type" value="callback">
                         <div class="callback-form__caption">Заказать бесплатную консультацию</div>
                         <div class="callback-form__content">
                             <div class="callback-form__block">
                                 <div class="callback-form__title">Имя</div>
-                                <input class="callback-form__input" type="text">
+                                <input class="callback-form__input" type="text" name="name">
                             </div>
                             <div class="callback-form__block">
                                 <div class="callback-form__title">Телефон</div>
-                                <input class="callback-form__input" type="phone">
+                                <input class="callback-form__input" type="phone" name="phone">
                             </div>
                         </div>
                         <div class="callback-form__button">
-                            <button class="button button-cta">ПЕРЕЗВОНИТЕ МНЕ</button>
+                            <button class="button button-cta" type="submit">ПЕРЕЗВОНИТЕ МНЕ</button>
                         </div>
                         <div class="callback-privacy">
                             <div class="callback-privacy__check">

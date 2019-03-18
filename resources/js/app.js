@@ -26,6 +26,7 @@ import RolesPermissionsComponent from './components/RolesPermissionsComponent.vu
 import CreateArticleComponent from './components/CreateArticleComponent.vue';
 import ArticleListComponent from './components/ArticleListComponent.vue';
 import GlossariesComponent from './components/GlossariesComponent.vue';
+import CreateGlossaryComponent from './components/CreateGlossaryComponent.vue';
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
@@ -44,11 +45,13 @@ const app = new Vue({
         RolesPermissionsComponent,
         CreateArticleComponent,
         ArticleListComponent,
-        GlossariesComponent
+        GlossariesComponent,
+        CreateGlossaryComponent,
     },
     data:{
         user: 'name',
     }
 });
+
 $('#myModal').modal('show');
 

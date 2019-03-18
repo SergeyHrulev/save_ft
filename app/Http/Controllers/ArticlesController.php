@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Articles;
 use Illuminate\Http\Request;
 use Alexusmai\Ruslug\Slug;
-use function PHPSTORM_META\elementType;
 
 class ArticlesController extends Controller
 {

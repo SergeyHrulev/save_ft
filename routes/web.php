@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use Spatie\Sitemap\SitemapGenerator;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +30,29 @@ Route::get('/business-security', 'PagesController@businessSecurity')->name('busi
 Route::get('/fast-start-upp', 'PagesController@fastStartUpp')->name('fast-start-upp');
 Route::get('/personal-banker', 'PagesController@personalBanker')->name('personal-banker');
 
+Route::get('/test', 'GlossaryController@create');
+
+/*
+ * Orders and letters
+ */
+Route::post('/send-order', 'PagesController@sendOrder')->name('send-order');
+
+Route::post('/subscribe', 'MailingController@subscribe')->name('subscribe');
+Route::get('{id}/unsubscribe', function (Request $request, $id){
+    if (!$request->hasValidSignature()){
+        abort(401);
+    }else{
+        \App\Mailing::destroy($id);
+        return redirect()->route('index')->with('successful_destroy', 'Вы успешно отменили подписку на нашу рассылку');
+    }
+})->name('unsubscribe');
+
+
+/*
+ * Return sitemap.xml
+ */
+
+Route::get('/sitemap.xml', 'SiteMapController@siteMap');
 
 
 Auth::routes(['verify' => true]);
@@ -42,12 +65,3 @@ Route::group(['middleware' => ['role:user'], 'prefix' => 'admin-dashboard'], fun
     require base_path('routes/dashboard/admin.php');
 });
 
-Route::post('/subscribe', 'MailingController@subscribe')->name('subscribe');
-Route::get('{id}/unsubscribe', function (Request $request, $id){
-    if (!$request->hasValidSignature()){
-        abort(401);
-    }else{
-        \App\Mailing::destroy($id);
-        return redirect()->route('index')->with('successful_destroy', 'Вы успешно отменили подписку на нашу рассылку');
-    }
-})->name('unsubscribe');

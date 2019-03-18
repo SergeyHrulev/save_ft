@@ -7,7 +7,6 @@
   </div>
 
   <div class="container">
-{{--{{ dd($articles) }}--}}
     <div class="row">
       <div class="col-12 col-xl-10">
         <div class="promo-text">

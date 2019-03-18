@@ -7,6 +7,7 @@ $factory->define(App\Order::class, function (Faker $faker) {
         'name' => $faker->name(),
         'phone' => $faker->phoneNumber,
         'email' => $faker->email,
+        'comment' => $faker->text,
         'type' => 'callback',
     ];
 });

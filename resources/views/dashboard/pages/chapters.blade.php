@@ -1,4 +1,4 @@
 @extends('dashboard.main')
 @section('pages')
-    <glossaries-component></glossaries-component>
+    <glossaries-component url="{{ url('/admin-dashboard/make-glossary-view') }}"></glossaries-component>
     @endsection

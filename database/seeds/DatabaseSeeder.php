@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             ChapterTableSeeder::class,
             GlossaryTableSeeder::class,
             OrderTableSeeder::class,
+            ReviewTableSeeder::class,
         ]);
     }
 }

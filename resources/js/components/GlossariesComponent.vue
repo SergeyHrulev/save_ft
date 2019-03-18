@@ -7,9 +7,9 @@
                 </div>
                 <button class="btn btn-outline-primary">Добавить раздел</button>
             </form>
-            <button class="btn btn-lg btn-primary">
+            <a :href="url" class="btn btn-lg btn-primary">
                 Создать статью
-            </button>
+            </a>
         </div>
         <table class="table">
             <thead>
@@ -24,7 +24,6 @@
             <tr v-for="glossary in glossaries">
                 <th scope="row">{{ glossary.id }}</th>
                 <td>{{ glossary.title }}</td>
-                <td>{{ glossary.capter.title }}</td>
                 <td>{{ glossary.created_at }}</td>
                 <td>
                     <button type="button" class="btn btn-primary" @click="editArticles(article.id)">Редактировать</button>
@@ -38,8 +37,26 @@
 </template>
 
 <script>
+    import axios from 'axios';
     export default {
-        name: "GlossariesComponent"
+        name: "GlossariesComponent",
+        props: ['url'],
+        data(){
+            return{
+                glossaries: {}
+            }
+        },
+        beforeMount(){
+            this.getGlossaries();
+        },
+        methods:{
+            getGlossaries(){
+                axios.get('/admin-dashboard/get-glossaries').then(res => {
+                    console.log(res.data);
+                    this.glossaries = res.data;
+                });
+            }
+        }
     }
 </script>
 

@@ -174,7 +174,7 @@
     </div>
     <!-- /col -->
     <div class="col-12 col-md-8">
-       @if(isset($dictionary))
+       @if(isset($dictionary) && !empty($dictionary))
             {{ Breadcrumbs::render('glossary', $dictionary[0]) }}
            @else
             {{ Breadcrumbs::render('glossaries') }}

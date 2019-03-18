@@ -9,18 +9,20 @@
         <h1>Контакты</h1>
       </div>
 
-      <div class="contacts-info">
+      <div class="contacts-info" itemscope itemtype="http://schema.org/PostalAddress">
         <div class="contacts-info__item">
           <div class="contacts-info__title">Телефон</div>
-          <div class="contacts-info__text"><a href="tel:+78129809572">(812) 980-95-72</a></div>
+          <div class="contacts-info__text"><a href="tel:+78129809572" itemprop="telephone">(812) 980-95-72</a></div>
         </div>
         <div class="contacts-info__item">
           <div class="contacts-info__title">Email</div>
-          <div class="contacts-info__text"><a href="mailto:info@intelifin.ru">info@intelifin.ru</a></div>
+          <div class="contacts-info__text"><a href="mailto:info@intelifin.ru" itemprop="email">info@intelifin.ru</a></div>
         </div>
         <div class="contacts-info__item contacts-info__item-address">
           <div class="contacts-info__title">Адрес</div>
-          <div class="contacts-info__text">СПб, Малая Посадская, 10</div>
+          <div class="contacts-info__text">
+              <span class="footer-contacts__item" itemprop="addressLocality">Санкт-Петербург,</span><span class="footer-contacts__item" itemprop="streetAddress"> Малая Посадская, 10</span>
+          </div>
         </div>
       </div>
     </div>

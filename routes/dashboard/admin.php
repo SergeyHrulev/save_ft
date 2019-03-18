@@ -17,6 +17,8 @@ Route::get('/get-roles-permissions', 'Admin\AdminController@getRolesPermissions'
 Route::get('/get-roles-permissions', 'Admin\AdminController@getRolesPermissions');
 Route::post('/set-permission', 'Admin\AdminController@setPermission');
 Route::post('/set-role', 'Admin\AdminController@setRole');
+Route::get('/get-glossaries', 'GlossaryController@index');
+Route::get('/make-glossary-view', 'Admin\AdminController@makeGlossary');
 
 Route::any('/set-article-img', 'ArticlesController@setArticleImg');
 Route::get('/get-article-img', 'ArticlesController@getArticleImg');

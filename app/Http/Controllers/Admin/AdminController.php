@@ -62,4 +62,8 @@ class AdminController extends Controller
         $role = Role::create(['name' => $request->input('role')]);
         $this->getRolesPermissions();
     }
+
+    public function makeGlossary(){
+        return view('dashboard.pages.glossary');
+    }
 }

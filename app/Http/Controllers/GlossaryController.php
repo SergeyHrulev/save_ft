@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Glossary;
+use App\Alphabet;
 use Illuminate\Http\Request;
 
 class GlossaryController extends Controller
@@ -14,7 +15,8 @@ class GlossaryController extends Controller
      */
     public function index()
     {
-        //
+        $glossaries = Glossary::all();
+        return $glossaries;
     }
 
     /**
@@ -22,9 +24,11 @@ class GlossaryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $string = 'Ratione assumenda nisi.';
+        $letter = substr($string, 0,1);
+        dd($letter);
     }
 
     /**

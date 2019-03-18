@@ -4,14 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Review extends Model
 {
-    protected $table = 'orders';
-
     protected $fillable = [
         'name',
-        'phone',
-        'email',
-        'type',
+        'avatar',
+        'company',
+        'text',
     ];
 }
