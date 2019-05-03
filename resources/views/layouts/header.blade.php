@@ -12,71 +12,71 @@
                 <a class="menu-link" href="javascript:void(0);">Услуги</a>
                 <ul class="menu-submenu">
                   <li>
-                    <a class="menu-submenu__link" href="{{ route('loan-expert') }}">
+                    <a class="menu-submenu__link" href="{{ route('chief-financial-officer') }}">
                       <div class="menu-submenu__pic">
                         <img src="{{ asset('img/icon/employee.svg') }}">
                       </div>
                       <div class="menu-submenu__text">
-                        <div class="menu-submenu__title">Кредитный эксперт</div>
-                        <div class="menu-submenu__subtitle">Учим разбираться в кредитах</div>
+                        <div class="menu-submenu__title">Финансовый директор</div>
+                        {{--<div class="menu-submenu__subtitle">Учим разбираться в кредитах</div>--}}
                       </div>
                     </a>
                   </li>
                   <li>
-                    <a class="menu-submenu__link" href="{{ route('chief-financial-officer') }}">
+                    <a class="menu-submenu__link" href="{{ route('quick-start') }}">
                       <div class="menu-submenu__pic">
                         <img src="{{ asset('img/icon/finance.svg') }}">
                       </div>
                       <div class="menu-submenu__text">
-                        <div class="menu-submenu__title">Финансовый директор</div>
-                        <div class="menu-submenu__subtitle">Управление финансами компании</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="menu-submenu__link" href="{{ route('financial-school') }}">
-                      <div class="menu-submenu__pic">
-                        <img src="{{ asset('img/icon/graduation-hat.svg') }}">
-                      </div>
-                      <div class="menu-submenu__text">
-                        <div class="menu-submenu__title">Школа финансового директора</div>
-                        <div class="menu-submenu__subtitle">Учим управлять финансами компании</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="menu-submenu__link" href="{{ route('business-security') }}">
-                      <div class="menu-submenu__pic">
-                        <img src="{{ asset('img/icon/shield.svg') }}">
-                      </div>
-                      <div class="menu-submenu__text">
-                        <div class="menu-submenu__title">Безопасность бизнеса</div>
-                        <div class="menu-submenu__subtitle">Чтобы всё под контролем</div>
-                      </div>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="menu-submenu__link" href="{{ route('fast-start-upp') }}">
-                      <div class="menu-submenu__pic">
-                        <img src="{{ asset('img/icon/startup.svg') }}">
-                      </div>
-                      <div class="menu-submenu__text">
                         <div class="menu-submenu__title">Быстрый старт</div>
-                        <div class="menu-submenu__subtitle">Управление финансами компании</div>
+                        {{--<div class="menu-submenu__subtitle">Управление финансами компании</div>--}}
                       </div>
                     </a>
                   </li>
-                  <li>
-                    <a class="menu-submenu__link" href="{{ route('personal-banker') }}">
-                      <div class="menu-submenu__pic">
-                        <img src="{{ asset('img/icon/handshake.svg') }}">
-                      </div>
-                      <div class="menu-submenu__text">
-                        <div class="menu-submenu__title">Ваш банкир</div>
-                        <div class="menu-submenu__subtitle">Управление финансами компании</div>
-                      </div>
-                    </a>
-                  </li>
+                  {{--<li>--}}
+                    {{--<a class="menu-submenu__link" href="{{ route('financial-school') }}">--}}
+                      {{--<div class="menu-submenu__pic">--}}
+                        {{--<img src="{{ asset('img/icon/graduation-hat.svg') }}">--}}
+                      {{--</div>--}}
+                      {{--<div class="menu-submenu__text">--}}
+                        {{--<div class="menu-submenu__title">Школа финансового директора</div>--}}
+                        {{--<div class="menu-submenu__subtitle">Учим управлять финансами компании</div>--}}
+                      {{--</div>--}}
+                    {{--</a>--}}
+                  {{--</li>--}}
+                  {{--<li>--}}
+                    {{--<a class="menu-submenu__link" href="{{ route('business-security') }}">--}}
+                      {{--<div class="menu-submenu__pic">--}}
+                        {{--<img src="{{ asset('img/icon/shield.svg') }}">--}}
+                      {{--</div>--}}
+                      {{--<div class="menu-submenu__text">--}}
+                        {{--<div class="menu-submenu__title">Безопасность бизнеса</div>--}}
+                        {{--<div class="menu-submenu__subtitle">Чтобы всё под контролем</div>--}}
+                      {{--</div>--}}
+                    {{--</a>--}}
+                  {{--</li>--}}
+                  {{--<li>--}}
+                    {{--<a class="menu-submenu__link" href="{{ route('fast-start-upp') }}">--}}
+                      {{--<div class="menu-submenu__pic">--}}
+                        {{--<img src="{{ asset('img/icon/startup.svg') }}">--}}
+                      {{--</div>--}}
+                      {{--<div class="menu-submenu__text">--}}
+                        {{--<div class="menu-submenu__title">Быстрый старт</div>--}}
+                        {{--<div class="menu-submenu__subtitle">Управление финансами компании</div>--}}
+                      {{--</div>--}}
+                    {{--</a>--}}
+                  {{--</li>--}}
+                  {{--<li>--}}
+                    {{--<a class="menu-submenu__link" href="{{ route('personal-banker') }}">--}}
+                      {{--<div class="menu-submenu__pic">--}}
+                        {{--<img src="{{ asset('img/icon/handshake.svg') }}">--}}
+                      {{--</div>--}}
+                      {{--<div class="menu-submenu__text">--}}
+                        {{--<div class="menu-submenu__title">Ваш банкир</div>--}}
+                        {{--<div class="menu-submenu__subtitle">Управление финансами компании</div>--}}
+                      {{--</div>--}}
+                    {{--</a>--}}
+                  {{--</li>--}}
                 </ul>
               </li>
               <li class="menu-item"><a class="menu-link" href="{{ route('events') }}">Мероприятия</a></li>

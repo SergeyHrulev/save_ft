@@ -23,12 +23,12 @@ Route::get('/event/{slug}', 'PagesController@event')->name('event');
 Route::get('/contacts', 'PagesController@contacts')->name('contacts');
 
 
-Route::get('/loan-expert', 'PagesController@loanExpert')->name('loan-expert');
-Route::get('/chief-financial-officer', 'PagesController@chiefFinancialOfficer')->name('chief-financial-officer');
-Route::get('/financial-school', 'PagesController@financialSchool')->name('financial-school');
-Route::get('/business-security', 'PagesController@businessSecurity')->name('business-security');
-Route::get('/fast-start-upp', 'PagesController@fastStartUpp')->name('fast-start-upp');
-Route::get('/personal-banker', 'PagesController@personalBanker')->name('personal-banker');
+Route::get('/quick-start', 'PagesController@quickStart')->name('quick-start');
+Route::get('/chief-financial-officer', 'PagesController@cfo')->name('chief-financial-officer');
+//Route::get('/financial-school', 'PagesController@financialSchool')->name('financial-school');
+//Route::get('/business-security', 'PagesController@businessSecurity')->name('business-security');
+//Route::get('/fast-start-upp', 'PagesController@fastStartUpp')->name('fast-start-upp');
+//Route::get('/personal-banker', 'PagesController@personalBanker')->name('personal-banker');
 
 Route::get('/test', 'GlossaryController@create');
 

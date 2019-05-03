@@ -49,12 +49,8 @@
 
           <div class="about-caption">О нас</div>
           <div class="about-text">
-              Мы — команда финансистов, бухгалтеров, налоговых специалистов и финансовых аналитиков. Помогаем компаниям, стартапам и индивидуальным предпринимателям тратить меньше, а зарабатывать больше.
-
-              Можем заменить вам штатного бухгалтера, финансового директора, консультанта и аналитика. Используем опыт крупных компаний, чтобы помочь малому и среднему бизнесу наладить управленческие процессы.
-
-              Работаем удаленно или отправляем к вам в компанию своего специалиста.
-
+              Компания «ФинТех» — это команда опытных финансистов, бухгалтеров, налоговых специалистов и финансовых контроллеров. У нас есть практические навыки, приобретенные во время работы в профильных отраслях, обширная информационная база и стремление добиваться поставленных целей. Это помогает нам качественно и эффективно выполнять задачи любого уровня сложности и приводить бизнес заказчиков к впечатляющим результатам.
+              <br>Мы специализируемся на финансовом аутсорсинге и готовы взять на себя ведение управленческого, финансового и налогового учета, расчитать ключевые финансовые показатели ведения бизнеса и проконтролировать их выполнение.
           </div>
         </div>
         <!-- /about-content -->
@@ -82,71 +78,41 @@
     <div class="advantages-content">
       <div class="row">
 
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-4">
           <div class="advantages-item">
             <div class="advantages-pic">
               <img src="{{ asset('img/icon/advantages-1.svg') }}" alt="">
             </div>
             <div class="advantages-info">
-              <div class="advantages-title">Помогаем начать</div>
-              <div class="advantages-text">
-                  Зарегистрируем бизнес, откроем счет в банке и научим правильно платить налоги. Рассчитаем проект стартапа и будем вести его бухгалтерию, кадровый и управленческий учет, контролировать счета и платежи.
-
-                  Если нужен кредит, подберем подходящий продукт, подготовим заявку и соберем справки, а вам останется только получить деньги.
-
-                  Мы решим текущие задачи и настроим процесс, чтобы дальше вы смогли справляться сами
-
-              </div>
+              <div class="advantages-title">Удобство</div>
+              <div class="advantages-text">Обращаясь к нам вы получаете быстрое решение по вопросам: открытия и ведения счетов, бухучету, налоговому планированию и многих других</div>
             </div>
           </div>
         </div>
 
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-4">
           <div class="advantages-item">
             <div class="advantages-pic">
               <img src="{{ asset('img/icon/advantages-2.svg') }}" alt="">
             </div>
             <div class="advantages-info">
-              <div class="advantages-title">Помогаем развиваться</div>
-              <div class="advantages-text">
-                  Проведем аудит уже работающего бизнеса. Поможем выбрать выгодные направления развития и найти клиентов, которые будут приносить прибыль, а не убытки.
-              </div>
+              <div class="advantages-title">Доступность</div>
+              <div class="advantages-text">Наши услуги обойдутся вам дешевле найма Финансового директора и Главного бухгалтера в штат</div>
             </div>
           </div>
         </div>
 
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-4">
           <div class="advantages-item">
             <div class="advantages-pic">
               <img src="{{ asset('img/icon/advantages-3.svg') }}" alt="">
             </div>
             <div class="advantages-info">
-              <div class="advantages-title">Помогаем  выйти из кризиса</div>
-              <div class="advantages-text">
-                  Поможем решить проблемы, когда кажется, что процессы налажены и все работает, но прибыли нет.
-
-                  Составим и внедрим пошаговый план управления. Напишем программу или подберем сервис под вашу компанию, чтобы вы могли настроить процессы и контролировать бизнес
-              </div>
+              <div class="advantages-title">Профессионализм</div>
+              <div class="advantages-text">Наши специалисты имеют практический опыт работы в разных областях: бухучет, управленческий учет, налоги и др.</div>
             </div>
           </div>
         </div>
-
-          <div class="col-12 col-lg-6">
-              <div class="advantages-item">
-                  <div class="advantages-pic">
-                      <img src="{{ asset('img/icon/advantages-3.svg') }}" alt="">
-                  </div>
-                  <div class="advantages-info">
-                      <div class="advantages-title">Помогаем разобраться в финансах</div>
-                      <div class="advantages-text">
-                          Научим управлять финансами. Для этого мы пишем в блог, снимаем обучающие видео, консультируем лично, проводим мастер-классы и читаем лекции.
-
-                          Можем обучить одного специалиста или сразу всех сотрудников вашей компании.
-
-                      </div>
-                  </div>
-              </div>
-          </div>
 
       </div>
       <!-- /row -->
@@ -187,7 +153,7 @@
               <div class="service-name">Бухгалтерский учет</div>
             </div>
             <div class="service-info">
-                Соберем документы, подготовим и сдадим отчеты в налоговую, страховой и пенсионный фонды.
+              Возьмем на себя сбор первичных документов, составление и сдачу отчетности в ФНС, ФСС, ПФ. Поможем выбрать оптимальный налоговый режим. Восстановим учет.
             </div>
           </div>
         </div>
@@ -201,7 +167,7 @@
               <div class="service-name">Управленческий учет</div>
             </div>
             <div class="service-info">
-                Оценим показатели бизнеса в динамике, покажем что и как можно улучшить. Определим критические, за которыми нужно следить, чтобы быстро реагировать на любые изменения.
+              Построим систему бюджетирования, определим ключевые финансовые показатели бизнеса, сформируем карту ключевых показателей, проконтролируем исполнение бюджетов.
             </div>
           </div>
         </div>
@@ -215,7 +181,7 @@
               <div class="service-name">Налоговое планирование</div>
             </div>
             <div class="service-info">
-                Подберем налоговый режим, чтобы вы не переплачивали, а направляли деньги на развитие бизнеса. Поможем сократить штрафы.
+              Сделаем расчет налоговой нагрузки, подберем оптимальный налоговый режим, проверим наличие налоговых рисков.
             </div>
           </div>
         </div>
@@ -226,10 +192,10 @@
               <div class="service-pic">
                 <img src="{{ asset('img/icon/shield.svg') }}" alt="">
               </div>
-              <div class="service-name">Расчет проекта</div>
+              <div class="service-name">Расчет проектов</div>
             </div>
             <div class="service-info">
-                Рассчитаем рентабельность проекта. Подскажем, куда выгоднее вложить деньги или поможем подготовить коммерческое предложение для инвесторов.
+              Если вы хотите открыть новое направление, бизнес, вложить деньги в проект или привлечь инвесторов в проект, мы сделаем расчет проекта, расчитаем сроки окупаемости, возврата инвестиций, расчитаем все необходимые показатели проекта.
             </div>
           </div>
         </div>
@@ -240,12 +206,24 @@
               <div class="service-pic">
                 <img src="{{ asset('img/icon/startup.svg') }}" alt="">
               </div>
-              <div class="service-name">Открытие счетов и помощь с кредитованием</div>
+              <div class="service-name">Быстрый старт</div>
             </div>
             <div class="service-info">
-                Поможем быстро открыть и правильно вести счета. Пока вы гуглите «как открыть счёт в банке для ИП», мы соберем все документы и откроем его за вас.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia fugiat molestias ipsa a nulla illo inventore, placeat, repellat.
+            </div>
+          </div>
+        </div>
 
-                Подготовим и отправим банковские документы. Научим общаться с банками, поможем выбрать и получить кредит или найти другие решения.
+        <div class="col-12 col-lg-6">
+          <div class="service-item">
+            <div class="service-caption">
+              <div class="service-pic">
+                <img src="{{ asset('img/icon/handshake.svg') }}" alt="">
+              </div>
+              <div class="service-name">Управление счетами и оборотным капиталом</div>
+            </div>
+            <div class="service-info">
+              Поможем с открытием и ведением счетов в банках, подготовкой и отправкой банковских документов, получением кредитов, паспортами сделок.
             </div>
           </div>
         </div>
@@ -259,53 +237,6 @@
   <!-- /container -->
 </section>
 <!-- /service -->
-
-<section class="service page-section" style="padding:0;">
-    <div class="container">
-
-        <div class="page-section__caption">
-            <div class="row">
-                <div class="col-12 col-lg-8 offset-lg-2">
-                    <h2 class="page-section__title">Пакеты</h2>
-                    {{--<h3 class="page-section__subtitle">Успех бизнеса зависит от эффективного управления финансами. <br> Главная задача руководителя — построить грамотную систему управления финансами. Наша задача - помочь вам в этом</h3>--}}
-                </div>
-
-                <div class="col-12 col-lg-6">
-                    <a href="{{ route('chief-financial-officer') }}" style="color:#273345;text-decoration: none;">
-                    <div class="service-item">
-                        <div class="service-caption">
-                            <div class="service-pic">
-                                <img src="{{ asset('img/icon/handshake.svg') }}" alt="">
-                            </div>
-                            <div class="service-name">Пакет услуг «Финансовый директор»</div>
-                        </div>
-                        <div class="service-info">
-                            Передать финансовые задачи бизнеса на аутсорс — это, как нанять Финансового директора в штат, только проще и дешевле.
-                        </div>
-                    </div>
-                    </a>
-                </div>
-
-                <div class="col-12 col-lg-6">
-                    <a href="{{ route('quick-start') }}" style="color:#273345;text-decoration: none;">
-                    <div class="service-item">
-                        <div class="service-caption">
-                            <div class="service-pic">
-                                <img src="{{ asset('img/icon/handshake.svg') }}" alt="">
-                            </div>
-                            <div class="service-name">Пакет услуг «Быстрый старт»</div>
-                        </div>
-                        <div class="service-info">
-                            Новое дело — это сложно, поэтому мы помогаем начинающим предпринимателям открыть бизнес или создать стартап быстро и без стресса.
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
 
 <section class="work page-section">
   <div class="container">
@@ -406,7 +337,7 @@
     <div class="page-section__caption">
       <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
-          <h2 class="page-section__title">Кейсы наших клиентов</h2>
+          <h2 class="page-section__title">Отзывы наших клиентов</h2>
           <h3 class="page-section__subtitle"></h3>
         </div>
       </div>
@@ -427,10 +358,66 @@
                   </div>
               </div>
               <div class="review-text">
-                  {!! $review->text !!}
+                  {{ $review->text }}
               </div>
           </div>
           @endforeach
+        {{--<div class="review-item">--}}
+          {{--<div class="review-author">--}}
+            {{--<div class="review-author__pic">--}}
+              {{--<img src="{{ asset('img/temp/author-1.jpg') }}" alt="">--}}
+            {{--</div>--}}
+            {{--<div class="review-author__info">--}}
+              {{--<div class="review-author__name">Мария Павликова</div>--}}
+              {{--<div class="review-author__company">Директор “Рога и Копыта”</div>--}}
+            {{--</div>--}}
+          {{--</div>--}}
+          {{--<div class="review-text">--}}
+            {{--Равным образом начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки новых предложений.--}}
+          {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="review-item">--}}
+          {{--<div class="review-author">--}}
+            {{--<div class="review-author__pic">--}}
+              {{--<img src="{{ asset('img/temp/author-2.jpg') }}" alt="">--}}
+            {{--</div>--}}
+            {{--<div class="review-author__info">--}}
+              {{--<div class="review-author__name">Мария Павликова</div>--}}
+              {{--<div class="review-author__company">Директор “Рога и Копыта”</div>--}}
+            {{--</div>--}}
+          {{--</div>--}}
+          {{--<div class="review-text">--}}
+            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus quaerat fugiat, voluptates delectus, et labore architecto commodi. Facilis qui, id!--}}
+          {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="review-item">--}}
+          {{--<div class="review-author">--}}
+            {{--<div class="review-author__pic">--}}
+              {{--<img src="{{ asset('img/temp/author-3.jpg') }}" alt="">--}}
+            {{--</div>--}}
+            {{--<div class="review-author__info">--}}
+              {{--<div class="review-author__name">Мария Павликова</div>--}}
+              {{--<div class="review-author__company">Директор “Рога и Копыта”</div>--}}
+            {{--</div>--}}
+          {{--</div>--}}
+          {{--<div class="review-text">--}}
+            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, exercitationem iusto suscipit voluptatum! Porro ut ratione hic voluptas expedita nam. Voluptates iste sit voluptas! Vero ipsa ab voluptate quidem mollitia.--}}
+          {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="review-item">--}}
+          {{--<div class="review-author">--}}
+            {{--<div class="review-author__pic">--}}
+              {{--<img src="{{ asset('img/temp/author-4.jpg') }}" alt="">--}}
+            {{--</div>--}}
+            {{--<div class="review-author__info">--}}
+              {{--<div class="review-author__name">Мария Павликова</div>--}}
+              {{--<div class="review-author__company">Директор “Рога и Копыта”</div>--}}
+            {{--</div>--}}
+          {{--</div>--}}
+          {{--<div class="review-text">--}}
+            {{--Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut molestiae, delectus, quas rerum molestias vel nemo dolore nesciunt maxime voluptatum eum quos sit reiciendis aspernatur.--}}
+          {{--</div>--}}
+        {{--</div>--}}
 
       </div>
       <!-- /review-slider -->

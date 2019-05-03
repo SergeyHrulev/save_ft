@@ -84,8 +84,11 @@ class PagesController extends Controller
         }
     }
 
-    public function loanExpert(){
-        return view('pages.servises.loanExpert');
+    public function cfo(){
+        return view('pages.servises.cfo');
+    }
+    public function quickStart(){
+        return view('pages.servises.quickStart');
     }
 
 }
