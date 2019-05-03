@@ -11709,6 +11709,12 @@ svg path {
   font-size: 24px;
 }
 
+@media (max-width: 540px) {
+  .promo-form {
+    display: none;
+  }
+}
+
 @media (min-width: 768px) {
   .promo-big {
     height: 595px;

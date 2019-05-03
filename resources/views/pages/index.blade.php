@@ -14,8 +14,8 @@
         @endif
 <div class="promo promo-big promo-main">
 
-  <div class="promo-pic">
-    <img src="{{ asset('img/promo-1.jpg') }}" alt="">
+  <div class="promo-pic" style="background-color: #555170;">
+    {{--<img src="{{ asset('img/promo-1.jpg') }}" alt="">--}}
   </div>
 
   <div class="container">
@@ -71,13 +71,13 @@
 <section class="advantages page-section">
   <div class="container">
 
-    <div class="page-section__caption">
-      <div class="row">
-        <div class="col-12 col-lg-8 offset-lg-2">
-          <h2 class="page-section__title">Обращение к аутсорсинговой компании имеет некоторые преимущества:</h2>
-        </div>
-      </div>
-    </div>
+    {{--<div class="page-section__caption">--}}
+      {{--<div class="row">--}}
+        {{--<div class="col-12 col-lg-8 offset-lg-2">--}}
+          {{--<h2 class="page-section__title">Обращение к аутсорсинговой компании имеет некоторые преимущества:</h2>--}}
+        {{--</div>--}}
+      {{--</div>--}}
+    {{--</div>--}}
 
     <div class="advantages-content">
       <div class="row">
@@ -153,9 +153,9 @@
     </div>
     <!-- /advantages-content -->
 
-    <div class="page-section__more">
-       <button class="button button-cta button-big" data-toggle="modal" data-target="#order">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
-    </div>
+    {{--<div class="page-section__more">--}}
+       {{--<button class="button button-cta button-big" data-toggle="modal" data-target="#order">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>--}}
+    {{--</div>--}}
 
   </div>
   <!-- /container -->
@@ -170,7 +170,8 @@
       <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
           <h2 class="page-section__title">Наши услуги</h2>
-          <h3 class="page-section__subtitle">Успех бизнеса зависит от эффективного управления финансами. <br> Главная задача руководителя — построить грамотную систему управления финансами. Наша задача - помочь вам в этом</h3>
+            <h3 class="page-section__subtitle">Проконсультируем по одному направлению или полностью займемся финансами вашей компании.</h3>
+          {{--<h3 class="page-section__subtitle">Успех бизнеса зависит от эффективного управления финансами. <br> Главная задача руководителя — построить грамотную систему управления финансами. Наша задача - помочь вам в этом</h3>--}}
         </div>
       </div>
     </div>
@@ -178,7 +179,7 @@
     <div class="service-content">
       <div class="row">
 
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6" id="accounting">
           <div class="service-item">
             <div class="service-caption">
               <div class="service-pic">
@@ -192,7 +193,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6" id="management">
           <div class="service-item">
             <div class="service-caption">
               <div class="service-pic">
@@ -206,7 +207,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6" id="taxation">
           <div class="service-item">
             <div class="service-caption">
               <div class="service-pic">
@@ -220,7 +221,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6" id="project">
           <div class="service-item">
             <div class="service-caption">
               <div class="service-pic">
@@ -234,7 +235,7 @@
           </div>
         </div>
 
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-6" id="banking">
           <div class="service-item">
             <div class="service-caption">
               <div class="service-pic">
@@ -310,53 +311,53 @@
 <section class="work page-section">
   <div class="container">
 
-    <div class="page-section__caption">
-      <div class="row">
-        <div class="col-12 col-lg-8 offset-lg-2">
-          <h2 class="page-section__title">Как мы работаем</h2>
-          <h3 class="page-section__subtitle">Равным образом начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки новых предложений.</h3>
-        </div>
-      </div>
-    </div>
+    {{--<div class="page-section__caption">--}}
+      {{--<div class="row">--}}
+        {{--<div class="col-12 col-lg-8 offset-lg-2">--}}
+          {{--<h2 class="page-section__title">Как мы работаем</h2>--}}
+          {{--<h3 class="page-section__subtitle">Равным образом начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки новых предложений.</h3>--}}
+        {{--</div>--}}
+      {{--</div>--}}
+    {{--</div>--}}
 
-    <div class="row">
-      <div class="col-12 col-lg-8 offset-lg-2">
+    {{--<div class="row">--}}
+      {{--<div class="col-12 col-lg-8 offset-lg-2">--}}
 
-        <div class="work-content">
+        {{--<div class="work-content">--}}
 
-          <div class="work-item">
-            <div class="work-number"><span>1</span></div>
-            <div class="work-info">Собираем необходимые документы для детального анализа финансового состояния компании, определяем необходимый объем работ и окончательную стоимость.</div>
-          </div>
-          <div class="work-item">
-            <div class="work-number"><span>2</span></div>
-            <div class="work-info">Проводим тщательный аудит компании, после чего разрабатываем финансовые показатели и согласовываем эти данные с собственниками компании.</div>
-          </div>
-          <div class="work-item">
-            <div class="work-number"><span>3</span></div>
-            <div class="work-info">
-                На основе полученной информации составляем бюджет и финансовый план.
-            </div>
-          </div>
-            <div class="work-item">
-                <div class="work-number"><span>4</span></div>
-                <div class="work-info">
-                    Контролируем выполнение показателей и корректируем бюджет.
-                </div>
-            </div>
+          {{--<div class="work-item">--}}
+            {{--<div class="work-number"><span>1</span></div>--}}
+            {{--<div class="work-info">Собираем необходимые документы для детального анализа финансового состояния компании, определяем необходимый объем работ и окончательную стоимость.</div>--}}
+          {{--</div>--}}
+          {{--<div class="work-item">--}}
+            {{--<div class="work-number"><span>2</span></div>--}}
+            {{--<div class="work-info">Проводим тщательный аудит компании, после чего разрабатываем финансовые показатели и согласовываем эти данные с собственниками компании.</div>--}}
+          {{--</div>--}}
+          {{--<div class="work-item">--}}
+            {{--<div class="work-number"><span>3</span></div>--}}
+            {{--<div class="work-info">--}}
+                {{--На основе полученной информации составляем бюджет и финансовый план.--}}
+            {{--</div>--}}
+          {{--</div>--}}
+            {{--<div class="work-item">--}}
+                {{--<div class="work-number"><span>4</span></div>--}}
+                {{--<div class="work-info">--}}
+                    {{--Контролируем выполнение показателей и корректируем бюджет.--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-        </div>
-        <!-- /work-content -->
+        {{--</div>--}}
+        {{--<!-- /work-content -->--}}
 
-      </div>
-    </div>
+      {{--</div>--}}
+    {{--</div>--}}
     <!-- /row -->
 
 
 
-    <div class="page-section__more">
-       <button class="button button-cta button-big" data-toggle="modal" data-target="#order">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>
-    </div>
+    {{--<div class="page-section__more">--}}
+       {{--<button class="button button-cta button-big" data-toggle="modal" data-target="#order">ЗАКАЗАТЬ КОНСУЛЬТАЦИЮ</button>--}}
+    {{--</div>--}}
 
 
   </div>
@@ -406,7 +407,7 @@
     <div class="page-section__caption">
       <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
-          <h2 class="page-section__title">Кейсы наших клиентов</h2>
+          <h2 class="page-section__title">Наши кейсы</h2>
           <h3 class="page-section__subtitle"></h3>
         </div>
       </div>
@@ -453,7 +454,7 @@
     <div class="page-section__caption">
       <div class="row">
         <div class="col-12 col-lg-8 offset-lg-2">
-          <h2 class="page-section__title">Интересные статьи и мероприятия</h2>
+          <h2 class="page-section__title">Блог</h2>
           <h3 class="page-section__subtitle"></h3>
         </div>
       </div>

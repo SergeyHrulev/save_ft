@@ -1,7 +1,7 @@
 <header class="header" id="header">
         <div class="header-logo">
           <a class="header-logo__link" href="/">
-            <div class="header-logo__title">FINTEX</div>
+            <div class="header-logo__title">ФинТех</div>
             <div class="header-logo__subtitle">Финансовый аутсорсинг</div>
           </a>
         </div>
@@ -79,7 +79,7 @@
                   {{--</li>--}}
                 </ul>
               </li>
-              <li class="menu-item"><a class="menu-link" href="{{ route('events') }}">Мероприятия</a></li>
+              {{--<li class="menu-item"><a class="menu-link" href="{{ route('events') }}">Мероприятия</a></li>--}}
               <li class="menu-item"><a class="menu-link" href="{{ route('articles') }}">Статьи</a></li>
               <li class="menu-item"><a class="menu-link" href="{{ route('glossaries') }}">Финсловарь</a></li>
               <li class="menu-item"><a class="menu-link" href="{{ route('contacts') }}">Контакты</a></li>

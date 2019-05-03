@@ -2,8 +2,8 @@
 @section('content')
     <div class="promo promo-big promo-main">
 
-        <div class="promo-pic">
-            <img src="{{ asset('img/promo-1.jpg') }}" alt="Управленческий учет" title="Управленческий учет">
+        <div class="promo-pic" style="background-color: #555170;">
+            {{--<img src="{{ asset('img/promo-1.jpg') }}" alt="Управленческий учет" title="Управленческий учет">--}}
         </div>
 
         <div class="container">

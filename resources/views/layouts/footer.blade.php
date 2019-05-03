@@ -8,12 +8,13 @@
         <div class="footer-menu">
           <div class="footer-title">Услуги</div>
           <ul class="footer-menu__list">
-            <li class="footer-menu__item"><a class="footer-menu__link" href="#">Кредитный эксперт</a></li>
-            <li class="footer-menu__item"><a class="footer-menu__link" href="#">Финансовый директор</a></li>
-            <li class="footer-menu__item"><a class="footer-menu__link" href="#">Школа Финансового Директора</a></li>
-            <li class="footer-menu__item"><a class="footer-menu__link" href="#">Уверенный старт</a></li>
-            <li class="footer-menu__item"><a class="footer-menu__link" href="#">Безопасность бизнеса</a></li>
-            <li class="footer-menu__item"><a class="footer-menu__link" href="#">Ваш банкир</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="{{ url('/') . '#accounting' }}">Бухгалтерский учет</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="{{ url('/') . '#management' }}">Управленческий учет</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="{{ url('/') . '#taxation' }}">Налоговое планирование</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="{{ url('/') . '#project' }}">Расчет проекта</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="{{ url('/') . '#banking' }}">Открытие счетов и помощь с кредитованием</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="{{ route('chief-financial-officer') }}">Пакет услуг "Финансовый директор"</a></li>
+            <li class="footer-menu__item"><a class="footer-menu__link" href="{{ route('quick-start') }}">Пакет услуг "Быстрый старт"</a></li>
           </ul>
         </div>
       </div>

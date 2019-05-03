@@ -20,7 +20,7 @@ class PagesController extends Controller
     public function index(){
         $articles = Articles::paginate(4);
         $events = Events::paginate(4);
-        $reviews = Review::paginate(4);
+        $reviews = Review::paginate(3);
         return view('pages.index', [
             'articles' => $articles,
             'events' => $events,
