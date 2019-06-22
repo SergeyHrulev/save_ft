@@ -1,67 +1,74 @@
 .footer {
-  padding: 40px 0;
-  background: #F7F7F7;
+  padding: 72px 100px;
+  background: #000000;
+    color: #ffffff;
 
-  &-title {
-    margin-bottom: 1rem;
-    font-size: 24px;
-    font-weight: 600;
-  }
-
-  &-menu {
-    margin-bottom: 2rem;
-
-    // &__item {
-    //   margin-bottom: 1rem;
-    //
-    //   &:last-child {
-    //     margin-bottom: 0;
-    //   }
-    // }
-
-    &__link {
-      display: block;
-      padding: 12px 0;
-      color: $font-color;
-      font-size: 18px;
-      // line-height: 40px;
-      line-height: 1;
-      font-weight: 500;
-
-      &:hover {
-        color: $primary-color;
-        text-decoration: none;
-      }
-    }
-  }
-
-  &-contacts {
-    &__list {
-      margin-bottom: 1.5rem;
-    }
-
-    &__item {
-      margin-bottom: 1rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-
-      a {
-        color: $font-color;
-        font-size: 18px;
-        font-weight: 400;
-
-        &:hover {
-          color: $font-color;
-          text-decoration: underline;
+    &-first-block {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &-main {
+            margin-bottom: 100px;
+            @media (max-width: 442px) {
+                margin-bottom: 20px;
+            }
         }
-      }
+        &-rights {
+            font-size: 15px;
+            line-height: 18px;
+            letter-spacing: 0.0025em;
+            color: #727272;
+        }
+        &-header {
+            font-size: 34px;
+            line-height: 147%;
+            letter-spacing: 0.0025em;
+        }
+        &-annotation {
+            font-size: 15px;
+            line-height: 18px;
+            letter-spacing: 0.0025em;
+        }
     }
-  }
-
-  &-map {
-    height: 200px;
-    width: 100%;
-  }
+    &-second-block {
+        width: 20%;
+    }
+    &-third-block {
+        width: 20%;
+    }
+    &-list {
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.0025em;
+        margin-bottom: 12px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-flow: wrap;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+@media (max-width: 442px) {
+    .footer {
+        padding: 10px 20px;
+        &-first-block {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        &-second-block {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        &-third-block {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
 }

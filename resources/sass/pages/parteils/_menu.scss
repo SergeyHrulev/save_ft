@@ -160,6 +160,7 @@
     justify-content: center;
     width: auto;
     overflow: visible;
+      background-color: transparent;
 
     li {
       &:hover {
@@ -186,6 +187,7 @@
     &-link {
       width: auto;
       padding: 0;
+        color: #ffffff;
 
       &:hover {
         color: $primary-color;
@@ -252,6 +254,7 @@
 }
 @media (min-width: 1600px) {
   .menu {
+      background-color: transparent;
     &-item {
       margin-right: 80px;
     }

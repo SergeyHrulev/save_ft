@@ -1,0 +1,20 @@
+.contacts {
+    padding: 40px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    &-header {
+        font-size: 34px;
+        line-height: 147%;
+        letter-spacing: 0.0025em;
+    }
+    &-text {
+        font-size: 20px;
+        line-height: 156%;
+        letter-spacing: 0.0025em;
+        color: #000000;
+    }
+}

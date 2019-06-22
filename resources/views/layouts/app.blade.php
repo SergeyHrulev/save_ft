@@ -30,7 +30,7 @@
         </div>
         <!-- /main-container -->
         @include('layouts.footer')
-        @include('layouts.order')
+        {{--@include('layouts.order')--}}
     {{--</div>--}}
 </body>
 </html>

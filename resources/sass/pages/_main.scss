@@ -224,9 +224,10 @@ body {
 
 .button {
   padding: 0 1rem;
-  color: #fff;
-  font-weight: 600;
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 147%;
+  letter-spacing: 0.0025em;
+  color: #FFFFFF;
   border: none;
   outline: none;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16);
@@ -238,14 +239,14 @@ body {
   }
 
   &-cta {
-    background: $primary-color;
+    background: $font-color-primary-dark;
     border-radius: 500px;
     height: 64px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
 
-    &:hover {
-      background: darken($primary-color, 10%);
-    }
+    //&:hover {
+    //  background: darken($primary-color, 10%);
+    //}
   }
 
   &-modal {
@@ -269,7 +270,7 @@ body {
     padding: 0 30px;
     line-height: 47px;
     font-size: 1.1rem;
-    text-transform: uppercase;
+    //text-transform: uppercase;
   }
 }
 @media (min-width: 768px) {
