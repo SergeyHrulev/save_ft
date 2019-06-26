@@ -5,6 +5,12 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 80px;
+    @media (max-width: 442px) {
+        padding: 20px 15px;
+        h2 {
+            font-size: 32px!important;
+        }
+    }
     h2{
         font-size: 46px;
         line-height: 147%;

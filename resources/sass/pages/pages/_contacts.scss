@@ -1,5 +1,13 @@
 .contacts {
   padding: 4rem 0;
+    @media (max-width: 442px) {
+        padding: 20px 15px;
+        margin-top: 20px;
+        &-address {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
 
   &-caption {
     border-bottom: 1px solid #D6D6D6;
@@ -20,7 +28,6 @@
 
       &-address {
         margin-bottom: 0;
-
         .contacts-info__text {
           font-size: 18px;
           font-weight: 400;
@@ -52,6 +59,9 @@
 
   &-map {
     height: 300px;
+      @media (max-width: 442px) {
+          height: 220px;
+      }
   }
 }
 @media (min-width: 992px) {

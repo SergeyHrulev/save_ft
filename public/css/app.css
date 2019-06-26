@@ -10996,6 +10996,12 @@ body {
   }
 }
 
+@media (max-width: 442px) {
+  .page-section {
+    padding: 20px 15px;
+  }
+}
+
 .button {
   padding: 0 1rem;
   font-size: 16px;
@@ -12475,6 +12481,13 @@ svg path {
   max-width: 628px;
 }
 
+@media (max-width: 442px) {
+  .about-block-text {
+    padding: 0 10px;
+    text-align: center;
+  }
+}
+
 .about-text {
   font-size: 28px;
   line-height: 147%;
@@ -12593,6 +12606,16 @@ svg path {
   align-items: center;
   flex-wrap: wrap;
   padding: 80px;
+}
+
+@media (max-width: 442px) {
+  .service {
+    padding: 20px 15px;
+  }
+
+  .service h2 {
+    font-size: 32px !important;
+  }
 }
 
 .service h2 {
@@ -12745,6 +12768,12 @@ svg path {
   }
 }
 
+@media (max-width: 442px) {
+  .subscribe {
+    margin-top: 40px;
+  }
+}
+
 .subscribe .page-section__caption {
   margin-bottom: 30px;
 }
@@ -12770,6 +12799,13 @@ svg path {
 
 .subscribe-input:focus {
   outline: none;
+}
+
+@media (max-width: 442px) {
+  .subscribe-input {
+    width: 80%;
+    height: 32px;
+  }
 }
 
 @media (min-width: 768px) {
@@ -13033,6 +13069,23 @@ svg path {
   max-width: 1200px;
 }
 
+@media (max-width: 442px) {
+  .utility {
+    padding: 20px 15px;
+    text-align: center;
+  }
+
+  .utility h2 {
+    text-align: center;
+    font-size: 32px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .utility .utility-title {
+    align-self: center;
+  }
+}
+
 .utility h2 {
   font-size: 46px;
   line-height: 147%;
@@ -13100,6 +13153,18 @@ svg path {
   padding: 4rem 0;
 }
 
+@media (max-width: 442px) {
+  .contacts {
+    padding: 20px 15px;
+    margin-top: 20px;
+  }
+
+  .contacts-address {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
 .contacts-caption {
   border-bottom: 1px solid #D6D6D6;
   padding-bottom: 20px;
@@ -13151,6 +13216,12 @@ svg path {
 
 .contacts-map {
   height: 300px;
+}
+
+@media (max-width: 442px) {
+  .contacts-map {
+    height: 220px;
+  }
 }
 
 @media (min-width: 992px) {

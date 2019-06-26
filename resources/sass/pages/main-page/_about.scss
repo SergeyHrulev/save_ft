@@ -23,6 +23,10 @@
   }
     &-block-text{
         max-width: 628px;
+        @media (max-width: 442px) {
+            padding: 0 10px;
+            text-align: center;
+        }
     }
   &-text {
       font-size: 28px;

@@ -7,6 +7,18 @@
     &-text-area{
         max-width: 1200px;
     }
+    @media (max-width: 442px) {
+        padding: 20px 15px;
+        text-align: center;
+        h2 {
+            text-align: center;
+            font-size: 32px!important;
+            margin-bottom: 30px!important;
+        }
+        .utility-title {
+            align-self: center;
+        }
+    }
     h2{
         font-size: 46px;
         line-height: 147%;

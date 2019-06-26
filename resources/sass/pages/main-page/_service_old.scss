@@ -1,6 +1,10 @@
 .service {
   background: #F7F7F7;
-
+    @media (max-width: 442px) {
+        .service {
+            padding: 20px 15px;
+        }
+    }
   &-content {
     .row {
       margin-top: -20px;
