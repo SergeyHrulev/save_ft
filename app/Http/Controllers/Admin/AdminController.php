@@ -17,7 +17,7 @@ class AdminController extends Controller
      * Return main dashboard list
      */
     public function index(){
-        return view('dashboard.main');
+        return view('dashboard.layouts.new_app');
     }
 
     public function users(){

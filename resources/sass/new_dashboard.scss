@@ -1,0 +1,46 @@
+@import "pages/dashboard/sidebar";
+@import "pages/dashboard/header";
+@import "pages/dashboard/glossaries";
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic');
+body, html {
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "main"
+        "footer";
+}
+@media only screen and (min-width: 768px) {
+   body {
+       margin: 0;
+       display: grid;
+       grid-template-columns: auto 81%;
+       grid-template-rows: 8% auto 10%;
+       grid-template-areas:
+           "sidebar header"
+           "sidebar main"
+           "sidebar footer";
+   }
+}
+aside {
+    grid-area: sidebar;
+    background: #007fff;
+}
+header {
+    grid-area: header;
+    background: #91c8ff;
+}
+main {
+    grid-area: main;
+    background: #f3f6f9;
+}
+footer {
+    grid-area: footer;
+    background: #588ec3;
+}

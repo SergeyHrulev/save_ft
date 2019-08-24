@@ -26,9 +26,7 @@ class GlossaryController extends Controller
      */
     public function create(Request $request)
     {
-        $string = 'Ratione assumenda nisi.';
-        $letter = substr($string, 0,1);
-        dd($letter);
+        return view();
     }
 
     /**
@@ -39,7 +37,16 @@ class GlossaryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $glossary = Glossary::firstOrCreate([
+            'chapter_id' => 1,
+            'slug' => Str::slug(Transliteration::make($request->title)),
+            'letter' => strtolower(mb_substr($request->title, 0,1)),
+            'title' => $request->title,
+            'text' => $request->description,
+            'published' => false
+        ]);
+        return $glossary;
+
     }
 
     /**

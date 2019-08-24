@@ -11,6 +11,7 @@ use App\Order;
 use App\Review;
 use Illuminate\Http\Request;
 use Lionix\SeoManager\Facades\SeoManager;
+use Illuminate\Support\Facades\DB;
 
 class PagesController extends Controller
 {
@@ -90,5 +91,4 @@ class PagesController extends Controller
     public function quickStart(){
         return view('pages.servises.quickStart');
     }
-
 }

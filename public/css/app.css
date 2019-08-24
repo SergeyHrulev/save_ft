@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic,cyrillic-ext);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
@@ -10769,8 +10769,7 @@ a.text-dark:focus {
 }
 
 @font-face {
-  font-family: "Avenir";
-  src: url(/fonts/AvenirNextCyr-Regular.ttf?97b615b907fd3510f9129eac4a731f6f);
+  font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-style: normal;
 }

@@ -1,12 +1,25 @@
 <template>
-    <div class="cms-content__item">
-        <div class="col-12 pt-1 pb-5 d-flex justify-content-between">
-            <div class="form-group">
-                <label for="chapterName">Название раздела</label>
-                <input type="text" class="form-control" id="chapterName" placeholder="Название раздела" v-model="chapter.title">
+    <div class="glossaryEdit">
+        <div class="glossaryEdit__addNewGlossary">
+            <div class="glossaryEdit__inputBlock">
+                <label for="">Раздел</label>
+                <input type="text" v-model="chapter.title">
             </div>
-            <div class="form-group">
-                <button class="btn btn-lg btn-primary">Создать раздел</button>
+            <div class="glossaryEdit__inputBlock">
+                <label for="">Мета заголовок</label>
+                <input type="text">
+            </div>
+            <div class="glossaryEdit__inputBlock">
+                <label for="">Описание</label>
+                <textarea name="" id="" cols="30" rows="5"></textarea>
+            </div>
+            <div class="glossaryEdit__inputBlock">
+                <label for="">Заголовок</label>
+                <input type="text">
+            </div>
+            <div class="glossaryEdit__inputBlock">
+                <label for="">Текст</label>
+                <textarea name="" id="" cols="30" rows="5"></textarea>
             </div>
         </div>
     </div>
@@ -30,8 +43,11 @@
                 axios.post('/admin-dashboard/save-chapter', this.chapter).then(res => {
                     
                 });
+            },
+            findChapter(event){
+                console.log(event.key)
             }
-        }
+        },
     }
 </script>
 

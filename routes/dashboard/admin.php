@@ -11,7 +11,10 @@ Route::post('/articles/delete', 'ArticlesController@destroy');
 Route::get('/articles/edit/{id}', 'ArticlesController@edit');
 Route::post('/articles/savephoto', 'Admin\ArticlePhotoController@savePhoto');
 Route::post('/articles/savemodel', 'Admin\ArticlePhotoController@savePhotoModel');
+
 Route::get('/chapters', 'Admin\AdminController@showChapters');
+Route::get('/find-chapters', 'Admin\ChapterController@find');
+
 Route::get('/get-users-with-roles', 'Admin\AdminController@getUsersWithRoles');
 Route::get('/get-roles-permissions', 'Admin\AdminController@getRolesPermissions');
 Route::get('/get-roles-permissions', 'Admin\AdminController@getRolesPermissions');

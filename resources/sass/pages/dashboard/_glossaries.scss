@@ -1,0 +1,37 @@
+.glossaryEdit {
+    display: flex;
+    flex-direction: column;
+    font-weight: 300;
+    &__addNewGlossary {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0 20px 20px;
+        width: 60%;
+    }
+    &__inputBlock {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    &__inputBlock input[type='text'] {
+        height: 40px;
+        border: 1.6px solid #D4DCE4;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    &__inputBlock input[type='placeholder'] {
+        padding-left: 10px;
+        color: #323232;
+        font-size: 15px;
+        line-height: 19px;
+    }
+    &__inputBlock textarea {
+        border: 1.6px solid #D4DCE4;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    &__addNewGlossary button {
+        background: #3ACC6C;
+        border-radius: 40%;
+    }
+}

@@ -52,6 +52,16 @@ const app = new Vue({
         user: 'name',
     }
 });
+const dashboard = new Vue({
+    el: '#dashboard',
+    components: {
+        CreateGlossaryComponent,
+        GlossariesComponent
+    },
+    data: {
+        user: 'name'
+    }
+});
 
 $('#myModal').modal('show');
 

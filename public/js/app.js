@@ -2117,6 +2117,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CreateGlossaryComponent",
   data: function data() {
@@ -2130,6 +2143,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     saveChapter: function saveChapter() {
       axios.post('/admin-dashboard/save-chapter', this.chapter).then(function (res) {});
+    },
+    findChapter: function findChapter(event) {
+      console.log(event.key);
     }
   }
 });
@@ -6712,7 +6728,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -42068,46 +42084,41 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "cms-content__item" }, [
-    _c(
-      "div",
-      { staticClass: "col-12 pt-1 pb-5 d-flex justify-content-between" },
-      [
-        _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "chapterName" } }, [
-            _vm._v("Название раздела")
-          ]),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.chapter.title,
-                expression: "chapter.title"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              id: "chapterName",
-              placeholder: "Название раздела"
-            },
-            domProps: { value: _vm.chapter.title },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.$set(_vm.chapter, "title", $event.target.value)
-              }
-            }
-          })
-        ]),
+  return _c("div", { staticClass: "glossaryEdit" }, [
+    _c("div", { staticClass: "glossaryEdit__addNewGlossary" }, [
+      _c("div", { staticClass: "glossaryEdit__inputBlock" }, [
+        _c("label", { attrs: { for: "" } }, [_vm._v("Раздел")]),
         _vm._v(" "),
-        _vm._m(0)
-      ]
-    )
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.chapter.title,
+              expression: "chapter.title"
+            }
+          ],
+          attrs: { type: "text" },
+          domProps: { value: _vm.chapter.title },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.$set(_vm.chapter, "title", $event.target.value)
+            }
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _vm._m(2),
+      _vm._v(" "),
+      _vm._m(3)
+    ])
   ])
 }
 var staticRenderFns = [
@@ -42115,10 +42126,40 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("button", { staticClass: "btn btn-lg btn-primary" }, [
-        _vm._v("Создать раздел")
-      ])
+    return _c("div", { staticClass: "glossaryEdit__inputBlock" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Мета заголовок")]),
+      _vm._v(" "),
+      _c("input", { attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "glossaryEdit__inputBlock" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Описание")]),
+      _vm._v(" "),
+      _c("textarea", { attrs: { name: "", id: "", cols: "30", rows: "5" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "glossaryEdit__inputBlock" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Заголовок")]),
+      _vm._v(" "),
+      _c("input", { attrs: { type: "text" } })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "glossaryEdit__inputBlock" }, [
+      _c("label", { attrs: { for: "" } }, [_vm._v("Текст")]),
+      _vm._v(" "),
+      _c("textarea", { attrs: { name: "", id: "", cols: "30", rows: "5" } })
     ])
   }
 ]
@@ -53864,6 +53905,16 @@ var app = new Vue({
     user: 'name'
   }
 });
+var dashboard = new Vue({
+  el: '#dashboard',
+  components: {
+    CreateGlossaryComponent: _components_CreateGlossaryComponent_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+    GlossariesComponent: _components_GlossariesComponent_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+  },
+  data: {
+    user: 'name'
+  }
+});
 $('#myModal').modal('show');
 
 /***/ }),
@@ -54722,10 +54773,10 @@ $('.modal-login .modal-bottom__link').click(function () {
 
 /***/ }),
 
-/***/ "./resources/sass/dashboard.scss":
-/*!***************************************!*\
-  !*** ./resources/sass/dashboard.scss ***!
-  \***************************************/
+/***/ "./resources/sass/new_dashboard.scss":
+/*!*******************************************!*\
+  !*** ./resources/sass/new_dashboard.scss ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -54734,15 +54785,15 @@ $('.modal-login .modal-bottom__link').click(function () {
 /***/ }),
 
 /***/ 0:
-/*!*********************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/dashboard.scss ***!
-  \*********************************************************************************************/
+/*!*************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/new_dashboard.scss ***!
+  \*************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\OSPanel\domains\ft\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\OSPanel\domains\ft\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\OSPanel\domains\ft\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
+module.exports = __webpack_require__(/*! C:\OSPanel\domains\ft\resources\sass\new_dashboard.scss */"./resources/sass/new_dashboard.scss");
 
 
 /***/ })

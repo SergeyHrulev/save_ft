@@ -22,6 +22,8 @@ Route::get('/events', 'PagesController@events')->name('events');
 Route::get('/event/{slug}', 'PagesController@event')->name('event');
 Route::get('/contacts', 'PagesController@contacts')->name('contacts');
 
+Route::get('/find-test', 'PagesController@find');
+
 
 Route::get('/quick-start', 'PagesController@quickStart')->name('quick-start');
 Route::get('/chief-financial-officer', 'PagesController@cfo')->name('chief-financial-officer');
@@ -30,7 +32,10 @@ Route::get('/chief-financial-officer', 'PagesController@cfo')->name('chief-finan
 //Route::get('/fast-start-upp', 'PagesController@fastStartUpp')->name('fast-start-upp');
 //Route::get('/personal-banker', 'PagesController@personalBanker')->name('personal-banker');
 
-Route::get('/test', 'GlossaryController@create');
+//Route::get('/test', 'GlossaryController@create');
+Route::get('/test', function (){
+    return view('test');
+});
 
 /*
  * Orders and letters

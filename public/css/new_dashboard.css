@@ -1,0 +1,187 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic);.sidebar {
+  padding: 10px 20px;
+}
+
+.sidebar h1 {
+  padding: 40px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-margin-before: 0.2em;
+          margin-block-start: 0.2em;
+  -webkit-margin-after: 0.2em;
+          margin-block-end: 0.2em;
+}
+
+.sidebar ul {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  padding: 0;
+}
+
+.sidebar ul > a {
+  text-decoration: none;
+}
+
+.sidebar ul > a > li:hover {
+  background: #00b8f6;
+}
+
+.sidebar ul > a > li {
+  list-style-type: none;
+  line-height: 1.6em;
+  padding: 10px 0;
+  color: #ffffff;
+}
+
+.sidebar ul > a > li:focus:after {
+  width: inherit;
+  height: inherit;
+}
+
+.dashboardHeader {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.dashboardHeader__avtarBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.dashboardHeader__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.dashboardHeader__profileMenu {
+  position: absolute;
+  top: 60px;
+  background: aliceblue;
+  right: 60px;
+}
+
+.dashboardHeader__profileMenu:after {
+  position: absolute;
+  top: 100%;
+  width: 60px;
+  height: 120px;
+  background-size: 100%;
+  content: "";
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+}
+
+.dashboardHeader__profileMenu ul {
+  padding: 10px 10px 10px 25px;
+  -webkit-margin-before: 0.2em;
+          margin-block-start: 0.2em;
+  -webkit-margin-after: 0.2em;
+          margin-block-end: 0.2em;
+}
+
+.dashboardHeader__profileMenu ul > li {
+  list-style-type: none;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  line-height: 1.4em;
+}
+
+.glossaryEdit {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+}
+
+.glossaryEdit__addNewGlossary {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 20px 20px;
+  width: 60%;
+}
+
+.glossaryEdit__inputBlock {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.glossaryEdit__inputBlock input[type=text] {
+  height: 40px;
+  border: 1.6px solid #D4DCE4;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.glossaryEdit__inputBlock input[type=placeholder] {
+  padding-left: 10px;
+  color: #323232;
+  font-size: 15px;
+  line-height: 19px;
+}
+
+.glossaryEdit__inputBlock textarea {
+  border: 1.6px solid #D4DCE4;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.glossaryEdit__addNewGlossary button {
+  background: #3ACC6C;
+  border-radius: 40%;
+}
+
+body,
+html {
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
+  grid-template-areas: "main" "footer";
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 81%;
+    grid-template-rows: 8% auto 10%;
+    grid-template-areas: "sidebar header" "sidebar main" "sidebar footer";
+  }
+}
+
+aside {
+  grid-area: sidebar;
+  background: #007fff;
+}
+
+header {
+  grid-area: header;
+  background: #91c8ff;
+}
+
+main {
+  grid-area: main;
+  background: #f3f6f9;
+}
+
+footer {
+  grid-area: footer;
+  background: #588ec3;
+}
+
