@@ -73,11 +73,8 @@
   height: 120px;
   background-size: 100%;
   content: "";
-  transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
-  -webkit-transform-origin: 50% 0;
-          transform-origin: 50% 0;
+  transform-origin: 50% 0;
 }
 
 .dashboardHeader__profileMenu ul {

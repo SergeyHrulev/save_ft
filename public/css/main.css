@@ -1,0 +1,321 @@
+html,
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+}
+
+.navMenu {
+  display: flex;
+  justify-content: space-between;
+  background: #005b86;
+  height: 80px;
+  color: #fff;
+}
+
+.navMenu__logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+  padding-left: 20px;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  font-family: "Roboto Bold 700", sans-serif;
+  font-size: 33px;
+}
+
+.navMenu__routeList {
+  flex-grow: 3;
+  align-self: center;
+  font-size: 1.2em;
+  font-weight: 400;
+  font-family: "Roboto medium 500", sans-serif;
+  font-size: x-large;
+}
+
+.navMenu__routeList ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none !important;
+}
+
+.navMenu__contacts {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
+  font-size: 1.2em;
+  font-weight: 400;
+  padding-right: 20px;
+  font-family: "Roboto Bold 700", sans-serif;
+  font-size: 26px;
+}
+
+.headerSection {
+  display: grid;
+}
+
+.headerSection__grafics {
+  position: relative;
+}
+
+.headerSection__grafics__chart {
+  height: 360px;
+  margin-bottom: -60px;
+}
+
+.headerSection__grafics__man {
+  position: absolute;
+  top: 0;
+  right: 2px;
+  height: 600px;
+}
+
+.headerSection__text {
+  padding-left: 40px;
+}
+
+.headerSection__text h1 {
+  font-size: 50px;
+  -webkit-margin-after: 0.3em;
+  margin-block-end: 0.5em;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.2;
+  font-family: "Roboto Bold 700", sans-serif;
+}
+
+.headerSection__text p {
+  font-size: 30px;
+  font-weight: bold;
+  -webkit-margin-before: 0;
+  margin-block-start: 0;
+  font-family: "Roboto medium 500", sans-serif;
+}
+
+.whoWeAre {
+  background: #b8d3dd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 0;
+}
+
+.whoWeAre div {
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: "Roboto Bold 700", sans-serif;
+  font-weight: bold;
+  font-size: x-large;
+  line-height: 1.6;
+}
+
+.whoWeAre div:first-child {
+  margin-bottom: 0;
+}
+
+.whoWeAre h2 {
+  font-weight: bold;
+}
+
+.whatWeDo {
+  padding: 0 40px;
+}
+
+.whatWeDo__heading {
+  display: flex;
+  width: 60%;
+  text-align: center;
+  justify-content: flex-start;
+}
+
+.whatWeDo__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.whatWeDo__columns {
+  width: 30%;
+}
+
+.whatWeDo__columns:nth-child(2) {
+  position: relative;
+}
+
+.whatWeDo__start {
+  position: absolute;
+  left: -340px;
+  top: -120px;
+}
+
+.whatWeDo__preHead {
+  font-family: "Roboto Bold 700", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+}
+
+.whatWeDo_post {
+  font-family: "Roboto medium 500", sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.whatWeDo__third {
+  position: relative;
+}
+
+.whatWeDo__third div {
+  position: absolute;
+  right: -80px;
+  width: 355px;
+}
+
+.testGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.weDo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+.weDo .serviceBlock {
+  width: 75%;
+}
+
+.weDo .blockHeader {
+  font-size: 3rem;
+  -webkit-margin-before: 0.3em;
+          margin-block-start: 0.3em;
+  -webkit-margin-after: 0.3em;
+          margin-block-end: 0.3em;
+}
+
+.weDo .blockText {
+  font-size: 2rem;
+  -webkit-margin-before: 0.1em;
+          margin-block-start: 0.1em;
+  -webkit-margin-after: 0.1em;
+          margin-block-end: 0.1em;
+}
+
+.weDo .checkList__block {
+  width: 90px;
+  height: 90px;
+  border: 6px solid;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.weDo .checkList__block img {
+  width: 120px;
+  height: 120px;
+}
+
+.weDo .iconBlock {
+  display: flex;
+  align-items: flex-start;
+  margin: -40px 30px 0 0;
+}
+
+.weDo .buttonBlock {
+  margin-top: 30px;
+}
+
+.weDo .buttonBlock a {
+  font-size: 2.5rem;
+  background: #005b86;
+  padding: 20px;
+  border-radius: 30px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.callbackBlock {
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #b8d3dd;
+}
+
+.callbackBlock h3 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.callbackBlock button {
+  font-size: 2rem;
+  padding: 20px;
+  background: #005b86;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+}
+
+.mainContacts {
+  display: flex;
+  padding: 40px 20px;
+  justify-content: space-between;
+}
+
+.mainContacts__leftBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mainContacts__leftBlock h5 {
+  font-size: 1.5rem;
+}
+
+.mainMap h5 {
+  font-size: 1.5rem;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background: #005b86;
+  margin-bottom: 30px;
+  color: #fff;
+  padding: 40px 40px;
+}
+
+footer .ftBlocks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  line-height: 3;
+}
+
+footer .ftBlocks ul > li {
+  list-style-type: none;
+}
+
+footer .ftBlocks:first-child {
+  margin-top: 0;
+}
+

@@ -14,6 +14,7 @@ use Spatie\Sitemap\SitemapGenerator;
 */
 
 Route::get('/', 'PagesController@index')->name('index');
+Route::get('/main', 'PagesController@main')->name('main');
 Route::get('/articles', 'PagesController@articles')->name('articles');
 Route::get('/articles/{slug}', 'PagesController@article')->name('article');
 Route::get('/glossaries', 'PagesController@glossaries')->name('glossaries');

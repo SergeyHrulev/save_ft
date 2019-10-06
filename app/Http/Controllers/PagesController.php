@@ -29,6 +29,11 @@ class PagesController extends Controller
         ]);
     }
 
+    public function main()
+    {
+        return view('main');
+    }
+
     public function articles(Articles $articles){
         $articles = Articles::sortDesc()->published()->paginate(5);
 
@@ -91,4 +96,23 @@ class PagesController extends Controller
     public function quickStart(){
         return view('pages.servises.quickStart');
     }
+
+
+//$table = 'restaurant';
+//$cols = [
+//'id'        => "{$table}s.id",
+//            'name'      => "tr.name"
+//        ];
+//
+//        $restaurant = Restaurant::select(
+//            array_map(function ($k, $v) {
+//                return "$v as $k";
+//            }, array_keys($cols), array_values($cols))
+//        )
+//            ->leftJoin("{$table}_translations as tr", function ($join) use ($table) {
+//                $join
+//                    ->on("{$table}s.id", "tr.{$table}_id")
+//                    ->where("tr.locale", \App::getLocale());
+//            });
+//        ];
 }
